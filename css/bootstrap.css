@@ -1396,10 +1396,6 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
-
-  width: 960px;
-  display: table;
-  table-layout: fixed;
 }
 ul ul,
 ol ul,
@@ -1407,15 +1403,6 @@ ul ol,
 ol ol {
   margin-bottom: 0;
 }
-
-ul li {
-  display: table-cell;
-}
-ul li a {
-  display: block;
-}
-
-
 .list-unstyled {
   padding-left: 0;
   list-style: none;
@@ -6577,5 +6564,3 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
-

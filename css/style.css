@@ -1,0 +1,11 @@
+ul {
+    width: 960px;
+    display: table;
+    table-layout: fixed;
+}
+ul li {
+    display: table-cell;
+}
+ul li a {
+    display: block;
+}
