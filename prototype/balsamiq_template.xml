@@ -1,0 +1,567 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1209" measuredH="768" mockupW="1024" mockupH="768">
+  <controls>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Button" x="465" y="175" w="111" h="42" measuredW="92" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%D5ppimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Button" x="779" y="175" w="111" h="42" measuredW="72" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%DCritused</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Button" x="623" y="175" w="111" h="42" measuredW="61" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Grupid</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="318" y="175" w="111" h="42" measuredW="71" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Uudised</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Button" x="922" y="175" w="111" h="42" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Blogi</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="185" y="0" w="1024" h="768" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//http%3A//www.eneta.ee/Lehed/default.aspx</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Button" x="957" y="96" w="82" h="27" measuredW="82" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logged%20In</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::StickyNote" x="304" y="92" w="517" h="65" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Veebilehe%20nimi%2C%20logo%20ning%20tutvustav%20%22slogan%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::TextArea" x="304" y="240" w="534" h="454" measuredW="200" measuredH="140" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::TextArea" x="858" y="240" w="185" h="214" measuredW="200" measuredH="140" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::TextArea" x="859" y="496" w="182" h="198" measuredW="200" measuredH="140" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::SubTitle" x="900" y="556" w="-1" h="-1" measuredW="84" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Liikmed</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::SubTitle" x="885" y="299" w="185" h="-1" measuredW="128" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%FCndmused</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Icon" x="1010" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FacebookIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::Icon" x="967" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TwitterIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Label" x="846" y="99" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mari%20Maasikas</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::Button" x="858" y="454" w="185" h="27" measuredW="104" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lisa%20s%FCndmus</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::TextInput" x="304" y="701" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kontakt</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="821" y="240" w="-1" h="454" measuredW="16" measuredH="100" zOrder="19" locked="false" isInGroup="-1"/>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1027" y="240" w="-1" h="214" measuredW="16" measuredH="100" zOrder="20" locked="false" isInGroup="-1"/>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Icon" x="858" y="496" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::Icon" x="890" y="496" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="391" y="704" w="-1" h="-1" measuredW="106" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ENETAst%20l%E4hemalt</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Canvas" x="302" y="161" w="748" h="70" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::VCurly" x="1058" y="166" w="144" h="61" measuredW="180" measuredH="140" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tab%27id%20erinevate%20alateemade%20juurde%20navigeerimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="185" y="0" w="1024" h="768" measuredW="450" measuredH="400" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//http%3A//www.eneta.ee/Lehed/isik123.aspx</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Canvas" x="304" y="161" w="748" h="70" measuredW="100" measuredH="70" zOrder="26" locked="false" isInGroup="-1"/>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Button" x="922" y="175" w="111" h="42" measuredW="50" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Blogi</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Button" x="465" y="175" w="111" h="42" measuredW="92" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%D5ppimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Button" x="779" y="175" w="111" h="42" measuredW="72" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%DCritused</text>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Button" x="623" y="175" w="111" h="42" measuredW="61" measuredH="27" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Grupid</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Button" x="318" y="175" w="111" h="42" measuredW="71" measuredH="27" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Uudised</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Button" x="957" y="96" w="82" h="27" measuredW="82" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logged%20In</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::StickyNote" x="318" y="92" w="517" h="65" measuredW="109" measuredH="123" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Veebilehe%20nimi%2C%20logo%20ning%20tutvustav%20%22slogan%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::TextArea" x="304" y="240" w="575" h="454" measuredW="200" measuredH="140" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::TextArea" x="895" y="240" w="153" h="214" measuredW="200" measuredH="140" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::TextArea" x="894" y="489" w="151" h="205" measuredW="200" measuredH="140" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::SubTitle" x="922" y="556" w="-1" h="-1" measuredW="84" measuredH="27" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Liikmed</text>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::SubTitle" x="901" y="284" w="185" h="-1" measuredW="128" measuredH="27" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%FCndmused</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Icon" x="1010" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FacebookIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Icon" x="967" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TwitterIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Label" x="846" y="99" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mari%20Maasikas</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Button" x="894" y="456" w="153" h="27" measuredW="104" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lisa%20s%FCndmus</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::TextInput" x="304" y="701" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kontakt</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1032" y="240" w="-1" h="214" measuredW="16" measuredH="100" zOrder="44" locked="false" isInGroup="-1"/>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Icon" x="925" y="489" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Icon" x="895" y="489" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::Label" x="391" y="704" w="-1" h="-1" measuredW="106" measuredH="21" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ENETAst%20l%E4hemalt</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::VCurly" x="1058" y="166" w="144" h="61" measuredW="180" measuredH="140" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tab%27id%20erinevate%20alateemade%20juurde%20navigeerimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::TextArea" x="304" y="240" w="125" h="454" measuredW="200" measuredH="140" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::List" x="306" y="243" w="119" h="163" measuredW="100" measuredH="153" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>Isik%3A%0AProfiil%0ALisa%20uudis%0ALisa%20teade%0ALisa%20uus%20grupp%0ALisa%20materjale%20%0A%09%F5ppimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::VCurly" x="211" y="242" w="93" h="140" measuredW="180" measuredH="140" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>right</direction>
+        <text>Isiku%20profiili%20s%E4tted%20%0Aja%20v%F5imalused</text>
+      </controlProperties>
+    </control>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::Label" x="440" y="255" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Profiil</text>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::TextInput" x="443" y="284" w="-1" h="-1" measuredW="39" measuredH="27" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nimi</text>
+      </controlProperties>
+    </control>
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::TextInput" x="443" y="326" w="-1" h="-1" measuredW="108" measuredH="27" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kontaktandmed</text>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Arrow" x="663" y="43" w="294" h="60" measuredW="150" measuredH="100" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="155" controlTypeID="com.balsamiq.mockups::SubTitle" x="922" y="311" w="-1" h="-1" measuredW="76" measuredH="27" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Teated</text>
+      </controlProperties>
+    </control>
+    <control controlID="156" controlTypeID="com.balsamiq.mockups::TextInput" x="443" y="406" w="-1" h="-1" measuredW="95" measuredH="27" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lisa%20profiilipilt</text>
+      </controlProperties>
+    </control>
+    <control controlID="157" controlTypeID="com.balsamiq.mockups::TextArea" x="443" y="454" w="408" h="140" measuredW="200" measuredH="140" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Iseloomustav%20info</text>
+      </controlProperties>
+    </control>
+    <control controlID="158" controlTypeID="com.balsamiq.mockups::TextInput" x="442" y="365" w="-1" h="-1" measuredW="89" measuredH="27" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kool/t%F6%F6koht</text>
+      </controlProperties>
+    </control>
+    <control controlID="159" controlTypeID="com.balsamiq.mockups::Arrow" x="355" y="276" w="95" h="43" measuredW="150" measuredH="100" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1192" y="73" w="-1" h="670" measuredW="16" measuredH="100" zOrder="61" locked="false" isInGroup="-1"/>
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="185" y="0" w="1024" h="768" measuredW="450" measuredH="400" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//http%3A//www.eneta.ee/Lehed/default.aspx</text>
+      </controlProperties>
+    </control>
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::Canvas" x="302" y="161" w="748" h="70" measuredW="100" measuredH="70" zOrder="63" locked="false" isInGroup="-1"/>
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::Button" x="922" y="175" w="111" h="42" measuredW="50" measuredH="27" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Blogi</text>
+      </controlProperties>
+    </control>
+    <control controlID="164" controlTypeID="com.balsamiq.mockups::Button" x="465" y="175" w="111" h="42" measuredW="92" measuredH="27" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%D5ppimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::Button" x="779" y="175" w="111" h="42" measuredW="72" measuredH="27" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%DCritused</text>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Button" x="623" y="175" w="111" h="42" measuredW="61" measuredH="27" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Grupid</text>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::Button" x="318" y="175" w="111" h="42" measuredW="71" measuredH="27" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Uudised</text>
+      </controlProperties>
+    </control>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::Button" x="957" y="96" w="82" h="27" measuredW="82" measuredH="27" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logged%20In</text>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::StickyNote" x="304" y="92" w="517" h="65" measuredW="109" measuredH="123" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Veebilehe%20nimi%2C%20logo%20ning%20tutvustav%20%22slogan%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::TextArea" x="304" y="240" w="534" h="454" measuredW="200" measuredH="140" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="171" controlTypeID="com.balsamiq.mockups::TextArea" x="858" y="240" w="185" h="214" measuredW="200" measuredH="140" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="172" controlTypeID="com.balsamiq.mockups::TextArea" x="859" y="496" w="182" h="198" measuredW="200" measuredH="140" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="173" controlTypeID="com.balsamiq.mockups::SubTitle" x="900" y="556" w="-1" h="-1" measuredW="84" measuredH="27" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Liikmed</text>
+      </controlProperties>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::SubTitle" x="885" y="299" w="185" h="-1" measuredW="128" measuredH="27" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%FCndmused</text>
+      </controlProperties>
+    </control>
+    <control controlID="175" controlTypeID="com.balsamiq.mockups::Icon" x="1010" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FacebookIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="176" controlTypeID="com.balsamiq.mockups::Icon" x="967" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TwitterIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="177" controlTypeID="com.balsamiq.mockups::Label" x="846" y="99" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mari%20Maasikas</text>
+      </controlProperties>
+    </control>
+    <control controlID="178" controlTypeID="com.balsamiq.mockups::Button" x="858" y="454" w="185" h="27" measuredW="104" measuredH="27" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lisa%20s%FCndmus</text>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::TextInput" x="304" y="701" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kontakt</text>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="821" y="240" w="-1" h="454" measuredW="16" measuredH="100" zOrder="81" locked="false" isInGroup="-1"/>
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1027" y="240" w="-1" h="214" measuredW="16" measuredH="100" zOrder="82" locked="false" isInGroup="-1"/>
+    <control controlID="182" controlTypeID="com.balsamiq.mockups::Icon" x="858" y="496" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="83" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Icon" x="890" y="496" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="84" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::Label" x="391" y="704" w="-1" h="-1" measuredW="106" measuredH="21" zOrder="85" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ENETAst%20l%E4hemalt</text>
+      </controlProperties>
+    </control>
+    <control controlID="185" controlTypeID="com.balsamiq.mockups::VCurly" x="1058" y="166" w="144" h="61" measuredW="180" measuredH="140" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tab%27id%20erinevate%20alateemade%20juurde%20navigeerimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="185" y="0" w="1024" h="768" measuredW="450" measuredH="400" zOrder="87" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//http%3A//www.eneta.ee/Lehed/yritused.aspx</text>
+      </controlProperties>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Canvas" x="304" y="161" w="748" h="70" measuredW="100" measuredH="70" zOrder="88" locked="false" isInGroup="-1"/>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::Button" x="922" y="175" w="111" h="42" measuredW="50" measuredH="27" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Blogi</text>
+      </controlProperties>
+    </control>
+    <control controlID="189" controlTypeID="com.balsamiq.mockups::Button" x="465" y="175" w="111" h="42" measuredW="92" measuredH="27" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%D5ppimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="190" controlTypeID="com.balsamiq.mockups::Button" x="779" y="175" w="111" h="42" measuredW="72" measuredH="27" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>%DCritused</text>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="com.balsamiq.mockups::Button" x="623" y="175" w="111" h="42" measuredW="61" measuredH="27" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Grupid</text>
+      </controlProperties>
+    </control>
+    <control controlID="192" controlTypeID="com.balsamiq.mockups::Button" x="318" y="175" w="111" h="42" measuredW="71" measuredH="27" zOrder="93" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>Uudised</text>
+      </controlProperties>
+    </control>
+    <control controlID="193" controlTypeID="com.balsamiq.mockups::Button" x="957" y="96" w="82" h="27" measuredW="82" measuredH="27" zOrder="94" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logged%20In</text>
+      </controlProperties>
+    </control>
+    <control controlID="194" controlTypeID="com.balsamiq.mockups::StickyNote" x="318" y="92" w="517" h="65" measuredW="109" measuredH="123" zOrder="95" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Veebilehe%20nimi%2C%20logo%20ning%20tutvustav%20%22slogan%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="195" controlTypeID="com.balsamiq.mockups::TextArea" x="304" y="240" w="575" h="454" measuredW="200" measuredH="140" zOrder="96" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="196" controlTypeID="com.balsamiq.mockups::TextArea" x="895" y="240" w="153" h="214" measuredW="200" measuredH="140" zOrder="97" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="197" controlTypeID="com.balsamiq.mockups::TextArea" x="894" y="489" w="151" h="205" measuredW="200" measuredH="140" zOrder="98" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="198" controlTypeID="com.balsamiq.mockups::SubTitle" x="922" y="556" w="-1" h="-1" measuredW="84" measuredH="27" zOrder="99" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Liikmed</text>
+      </controlProperties>
+    </control>
+    <control controlID="199" controlTypeID="com.balsamiq.mockups::SubTitle" x="901" y="284" w="185" h="-1" measuredW="128" measuredH="27" zOrder="100" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%FCndmused</text>
+      </controlProperties>
+    </control>
+    <control controlID="200" controlTypeID="com.balsamiq.mockups::Icon" x="1010" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="101" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FacebookIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="201" controlTypeID="com.balsamiq.mockups::Icon" x="967" y="133" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="102" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TwitterIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="202" controlTypeID="com.balsamiq.mockups::Label" x="846" y="99" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="103" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mari%20Maasikas</text>
+      </controlProperties>
+    </control>
+    <control controlID="203" controlTypeID="com.balsamiq.mockups::Button" x="894" y="456" w="153" h="27" measuredW="104" measuredH="27" zOrder="104" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lisa%20s%FCndmus</text>
+      </controlProperties>
+    </control>
+    <control controlID="204" controlTypeID="com.balsamiq.mockups::TextInput" x="304" y="701" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="105" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kontakt</text>
+      </controlProperties>
+    </control>
+    <control controlID="205" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1191" y="71" w="-1" h="672" measuredW="16" measuredH="100" zOrder="106" locked="false" isInGroup="-1"/>
+    <control controlID="206" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1032" y="240" w="-1" h="214" measuredW="16" measuredH="100" zOrder="107" locked="false" isInGroup="-1"/>
+    <control controlID="207" controlTypeID="com.balsamiq.mockups::Icon" x="925" y="489" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="108" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="208" controlTypeID="com.balsamiq.mockups::Icon" x="895" y="489" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="109" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="209" controlTypeID="com.balsamiq.mockups::Label" x="391" y="704" w="-1" h="-1" measuredW="106" measuredH="21" zOrder="110" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ENETAst%20l%E4hemalt</text>
+      </controlProperties>
+    </control>
+    <control controlID="210" controlTypeID="com.balsamiq.mockups::VCurly" x="1058" y="166" w="144" h="61" measuredW="180" measuredH="140" zOrder="111" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tab%27id%20erinevate%20alateemade%20juurde%20navigeerimiseks</text>
+      </controlProperties>
+    </control>
+    <control controlID="219" controlTypeID="com.balsamiq.mockups::Arrow" x="623" y="43" w="198" h="123" measuredW="150" measuredH="100" zOrder="112" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="220" controlTypeID="com.balsamiq.mockups::SubTitle" x="922" y="311" w="-1" h="-1" measuredW="76" measuredH="27" zOrder="113" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Teated</text>
+      </controlProperties>
+    </control>
+    <control controlID="221" controlTypeID="com.balsamiq.mockups::TextArea" x="318" y="255" w="549" h="127" measuredW="200" measuredH="140" zOrder="114" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%DCritus%201%20-%20Toimumise%20aeg%2C%20koht%2C%20kokkuv%F5te%2C%20pildid%20jms%20oluline%20info</text>
+      </controlProperties>
+    </control>
+    <control controlID="223" controlTypeID="com.balsamiq.mockups::TextArea" x="318" y="392" w="549" h="136" measuredW="200" measuredH="140" zOrder="115" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%DCritus%202%20-Toimumise%20aeg%2C%20koht%2C%20kokkuv%F5te%2C%20pildid%20jms%20oluline%20info</text>
+      </controlProperties>
+    </control>
+    <control controlID="224" controlTypeID="com.balsamiq.mockups::TextArea" x="318" y="536" w="549" h="140" measuredW="200" measuredH="140" zOrder="116" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%DCritus%203%20-Toimumise%20aeg%2C%20koht%2C%20kokkuv%F5te%2C%20pildid%20jms%20oluline%20info</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
