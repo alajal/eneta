@@ -9,3 +9,25 @@ ul li {
 ul li a {
     display: block;
 }
+
+.right {
+    display: inline;
+}
+
+.logo {
+    background: url("/images/media-shuffle.png") no-repeat center;
+    width: 64px;
+    height: 64px;
+}
+.news {
+    border: solid #080808;
+}
+
+.footer {
+    display: table;
+    width: 100%;
+}
+
+#kontakt {
+    display: table-cell;
+}
