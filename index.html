@@ -28,23 +28,23 @@
         <nav class="nav">
             <div class="menu-wrapper">
                 <ul class="menu">
-                    <li class="uudised">
+                    <li class="uudised-tab">
                         <a href="/pages/uudised/">Uudised</a>
                     </li>
 
-                    <li class="oppimiseks">
+                    <li class="oppimiseks-tab">
                         <a href="/pages/oppimiseks/">Õppimiseks</a>
                     </li>
 
-                    <li class="grupid">
+                    <li class="grupid-tab">
                         <a href="/pages/grupid/">Grupid</a>
                     </li>
 
-                    <li class="yritused">
+                    <li class="yritused-tab">
                         <a href="/pages/yritused/">Üritused</a>
                     </li>
 
-                    <li class="blogi">
+                    <li class="blogi-tab">
                         <a href="/pages/yritused/">Blogi</a>
                     </li>
                 </ul>
@@ -54,9 +54,41 @@
     </header>
     <br>
     <div class="content">
-        <div class="news">
+
+        <div class="uudised">
             <!--koht, kus javascript loob uued uudised-->
-            <p>Sisu</p>
+            <p>Uudised</p>
+        </div>
+
+        <div class="oppimiseks">     <!--hetkel peidetud cssi display none'iga-->
+            <div class="oppimiseks-sisukord">
+                <table>
+                    <tr>
+                        <td>Ajakirjad</td>
+                    </tr>
+                    <tr>
+                        <td>Raamatud</td>
+                    </tr>
+                    <tr>
+                        <td>Videod</td>
+                    </tr>
+                    <tr>
+                        <td>Koolitused</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="oppimiseks-sisu">
+                <p>Sisu vastavalt valikule</p>
+                <p>Javascript tegutseb siin</p>
+            </div>
+        </div>
+
+        <div class="yritused">
+            <div>
+                <p>Üritus 1</p>
+                <p>Üritus 2</p>
+            </div>
         </div>
     </div>
 

@@ -52,12 +52,14 @@
         </nav>
 
     </header>
-    <br>
+
     <div class="content">
         <div class="news">
             <!--koht, kus javascript loob uued uudised-->
             <p>Sisu</p>
         </div>
+
+
     </div>
 
     <footer>
