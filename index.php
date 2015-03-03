@@ -85,7 +85,7 @@
     $messages = $stmt->fetchAll();
     if(count($messages) > 0) {
         foreach($messages as $message) {
-            echo "<h2>".$message."</h2>";
+            echo "<h2>".$message["message"]."</h2>";
         }
     } else {
         echo "<h3>mingi jama</h3>";
