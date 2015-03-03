@@ -82,9 +82,11 @@
 
     $sql_select = "SELECT t.message FROM enetadb.test_tbl t where t.name = 'Lembit'";
     $stmt = $conn->query($sql_select);
-    $message = $stmt->fetchAll();
-    if(count($message) > 0) {
-        echo "<h2>message</h2>";
+    $messages = $stmt->fetchAll();
+    if(count($messages) > 0) {
+        foreach($messages as $message) {
+            echo "<h2>$message</h2>";
+        }
     } else {
         echo "<h3>mingi jama</h3>";
     }
