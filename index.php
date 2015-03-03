@@ -79,6 +79,16 @@
     catch(Exception $e){
         die(var_dump($e));
     }
+
+    $sql_select = "SELECT t.message FROM enetadb.test_tbl t where t.name = 'Lembit'";
+    $stmt = $conn->query($sql_select);
+    $message = $stmt->fetchAll();
+    if(count($message) > 0) {
+        echo "<h2>message</h2>";
+    } else {
+        echo "<h3>mingi jama</h3>";
+    }
+
     ?>
 
 
