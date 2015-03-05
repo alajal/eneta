@@ -42,3 +42,11 @@ table {
     border: solid gray;
     display: none;
 }
+
+.top{
+    background-color: #AD85FF;
+}
+
+a{
+    color: #000000;
+}
