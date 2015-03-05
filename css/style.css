@@ -1,41 +1,102 @@
-ul {
-    width: 960px;
+.not {
+    display: none;
+}
+
+nav.nav {
+    width: 100%;
     display: table;
     table-layout: fixed;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-right: none;
 }
-ul li {
+
+ul.menu {
+    display: table-row;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu li {
+    list-style: none;
     display: table-cell;
+
+    text-align: center;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #ccc;
+    width: 20%;
+    box-sizing: border-box;
 }
-ul li a {
+
+ul.menu li:first-child {
+    border-left: none;
+}
+
+ul.menu li a {
     display: block;
+    text-decoration: none;
+    color: #616161;
+    padding: 10px 0;
 }
+
+ul.menu li a:hover, a:active {
+    color: #c00;
+    background-color: #fff;
+}
+
 
 .right {
     display: inline;
 }
 
 .logo {
-    background: url("/images/media-shuffle.png") no-repeat center;
+    background: url("../images/media-shuffle.png") no-repeat center;
     width: 64px;
     height: 64px;
 }
-.uudised {
-    border: solid #080808;
-    display: none;
-}
+
 
 .footer {
     display: table;
     width: 100%;
 }
 
-#kontakt {
-    display: table-cell;
+#content {
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    background: #fffafe;
 }
 
-table {
-    float:left;
-    margin-right:40px;
+#content-container {
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 80%;
+    border: #ccc;
+    background: #cac6ff;
+}
+
+#left-sidebar {
+    float: left;
+    width: 20%;
+    position: relative;
+    left: 80%;
+    overflow: hidden;
+}
+
+#first-content-col {
+    float: left;
+    width: 76%;
+    position: relative;
+    left: 82%;
+    overflow: hidden;
+}
+
+#left-sidebar li {
+    list-style: none;
 }
 
 .oppimiseks {
@@ -50,3 +111,4 @@ table {
 a{
     color: #000000;
 }
+
