@@ -2,7 +2,7 @@
     display: none;
 }
 
-nav.nav {
+.bottom {
     width: 100%;
     display: table;
     table-layout: fixed;
@@ -11,7 +11,7 @@ nav.nav {
     border-right: none;
 }
 
-ul.menu {
+.menu {
     display: table-row;
     overflow: hidden;
     margin: 0;
@@ -44,7 +44,6 @@ ul.menu li a:hover, a:active {
     color: #c00;
     background-color: #fff;
 }
-
 
 .right {
     display: inline;

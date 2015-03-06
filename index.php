@@ -1,9 +1,13 @@
+<?php
+require_once 'functions.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>Eneta</title>
-    <!--link rel="stylesheet" href="css/bootstrap.css"/-->
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/main.js"></script>
@@ -26,7 +30,7 @@
             </div>
         </nav>
 
-        <nav class="nav">
+        <nav class="bottom">
             <!--div class="menu-wrapper"-->
                 <ul class="menu">
                     <li class="uudised">
@@ -69,26 +73,7 @@
                 <p>Sisu</p>
 
                 <?php
-                // DB connection info
-                //TODO: Update the values for $host, $user, $pwd, and $db
-                //using the values you retrieved earlier from the portal.
-                $host = "eu-cdbr-azure-north-b.cloudapp.net";
-                $user = "b3870d42c5e18e";
-                $pwd = "6fde5b20";
-                $db = "enetaDB";
-                // Connect to database.
-                try {
-                    $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
-                    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-                    echo "<p>Database success.</p>";
-                }
-                catch(Exception $e){
-                    die(var_dump($e));
-                }
-
-                $sql_select = "SELECT t.message FROM enetadb.test_tbl t where t.name = 'Lembit'";
-                $stmt = $conn->query($sql_select);
-                $messages = $stmt->fetchAll();
+                $messages = getMessages();
                 if(count($messages) > 0) {
                     foreach($messages as $message) {
                         echo "<p>".$message["message"]."</p>";
@@ -96,7 +81,6 @@
                 } else {
                     echo "<p>mingi jama</p>";
                 }
-
                 ?>
 
             </div>

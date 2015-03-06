@@ -30,7 +30,7 @@
             <!--div class="menu-wrapper"-->
                 <ul class="menu">
                     <li class="uudised">
-                        <a href="./index.php">Uudised</a>
+                        <a href="index.php">Uudised</a>
                     </li>
 
                     <li class="oppimiseks">

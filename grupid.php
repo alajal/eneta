@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Eneta</title>
-    <!--link rel="stylesheet" href="css/bootstrap.css"/-->
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/main.js"></script>
@@ -26,11 +26,11 @@
             </div>
         </nav>
 
-        <nav class="nav">
+        <nav class="bottom">
             <!--div class="menu-wrapper"-->
                 <ul class="menu">
                     <li class="uudised">
-                        <a href="./index.php">Uudised</a>
+                        <a href="index.php">Uudised</a>
                     </li>
 
                     <li class="oppimiseks">
