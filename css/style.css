@@ -37,7 +37,7 @@ ul.menu li a {
     display: block;
     text-decoration: none;
     color: #616161;
-    padding: 10px 0;
+
 }
 
 ul.menu li a:hover, a:active {
@@ -55,9 +55,7 @@ ul.menu li a:hover, a:active {
     height: 64px;
 }
 
-
 .footer {
-    display: table;
     width: 100%;
 }
 
@@ -100,7 +98,6 @@ ul.menu li a:hover, a:active {
 
 .oppimiseks {
     border: solid gray;
-    display: none;
 }
 
 .top{
