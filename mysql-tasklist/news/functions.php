@@ -1,22 +1,9 @@
 <!--https://github.com/Azure/azure-sdk-for-php-samples/tree/master/tasklist-mysql -->
 <?php
-/** * Copyright 2013 Microsoft Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-require_once 'config.php';
+require_once dirname(__FILE__)."/../../config.php";
 
-function connect()
+function connectToDatabase()
 {
     // DB connection info
     global $config_db_host;
@@ -24,7 +11,7 @@ function connect()
     global $config_db_user;
     global $config_db_pwd;
     try{
-        $conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd);
+        $conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(Exception $e){
@@ -43,9 +30,9 @@ function markItemComplete($item_id)
 }
 */
 
-function getAllNews()
+function getNews()
 {
-    $conn = connect();
+    $conn = connectToDatabase();
     $sql = "SELECT * FROM news";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll();
@@ -53,7 +40,7 @@ function getAllNews()
 
 function addNews($user, $title, $content, $date)
 {
-    $conn = connect();
+    $conn = connectToDatabase();
     $sql = "INSERT INTO news (user, title, content, datetime) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $user);
@@ -65,7 +52,7 @@ function addNews($user, $title, $content, $date)
 
 function deleteNews($news_id)
 {
-    $conn = connect();
+    $conn = connectToDatabase();
     $sql = "DELETE FROM news WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $news_id);
