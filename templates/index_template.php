@@ -11,7 +11,7 @@
 <body>
 
 <?php
-include('header_template.php')
+include('header_template.php');
 ?>
 
 <div id="content">
@@ -19,12 +19,11 @@ include('header_template.php')
         <div id="left-sidebar">
             <ul>
                 <li><a href="#">Kuva uudised</a> </li>
-                <li><a href="#">Sisesta uudised</a> </li>
+                <li><a href="../sisesta.php">Sisesta uudised</a> </li>
             </ul>
         </div>
 
         <div id="first-content-col">
-            <!--koht, kus javascript loob uued uudised-->
             <p>Sisu</p>
 
             <?php
@@ -42,7 +41,7 @@ include('header_template.php')
 </div>
 
 <?php
-include('footer_template.php')
+include('footer_template.php');
 ?>
 
 </body>
