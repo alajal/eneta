@@ -1,9 +1,6 @@
 <?php
 
-$config_db_host = "localhost";
-$config_db_user = "root";
-$config_db_pwd = "mariaandmebaas";
-$config_db_name = "enetaDB";
+require_once 'config.php';
 
 include('templates/sisesta_template.php');
 
