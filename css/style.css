@@ -2,6 +2,8 @@
     display: none;
 }
 
+
+
 .bottom {
     width: 100%;
     display: table;
@@ -18,7 +20,7 @@
     padding: 0;
 }
 
-ul.menu li {
+.menu li {
     list-style: none;
     display: table-cell;
 
@@ -29,18 +31,18 @@ ul.menu li {
     box-sizing: border-box;
 }
 
-ul.menu li:first-child {
+.menu li:first-child {
     border-left: none;
 }
 
-ul.menu li a {
+.menu li a {
     display: block;
     text-decoration: none;
     color: #616161;
 
 }
 
-ul.menu li a:hover, a:active {
+.menu li a:hover, a:active {
     color: #c00;
     background-color: #fff;
 }
@@ -64,36 +66,28 @@ ul.menu li a:hover, a:active {
     float: left;
     width: 100%;
     overflow: hidden;
-    background: #fffafe;
-}
-
-#content-container {
-    float: left;
-    width: 100%;
-    position: relative;
-    right: 80%;
-    border: #ccc;
-    background: #cac6ff;
+    background-color: #cac6ff;
 }
 
 #left-sidebar {
     float: left;
     width: 20%;
     position: relative;
-    left: 80%;
     overflow: hidden;
 }
 
-#first-content-col {
+.content-col {
     float: left;
-    width: 76%;
+    width: 80%;
     position: relative;
-    left: 82%;
     overflow: hidden;
+    padding: 5px;
+    background-color: #f0ffff;
 }
 
-#left-sidebar li {
+#left-sidebar ul {
     list-style: none;
+    padding-left: 5px;
 }
 
 .oppimiseks {
