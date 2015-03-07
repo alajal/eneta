@@ -1,6 +1,7 @@
 <?php
 require_once 'config.php';
 
+
 function getMessages()
 {
     $conn = connectToDatabase();

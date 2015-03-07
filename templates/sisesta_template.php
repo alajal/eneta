@@ -20,8 +20,15 @@
     </form>
 
     <?php
-
+        if($textHasValue) {
+            echo "<p>Kõik õnnestus</p>";
+        }
+        if($sqlDatabaseConnected) {
+            echo "<p>Tere</p>";
+        }
     ?>
+
+
 
 </body>
 </html>

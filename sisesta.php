@@ -1,30 +1,26 @@
 <?php
 
-require_once 'config.php';
+require_once 'functions.php';
 
-include('templates/sisesta_template.php');
+$textHasValue = false;
+$sqlDatabaseConnected = false;
 
 if(isset($_POST['submit'])){
-    echo "Vajutati nuppu!",  "\n";
+
     $news = $_POST['text'];
 
-    try {
-        $dbh = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd);
-        // set the PDO error mode to exception
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
+    $conn = connectToDatabase();
+    $sqlDatabaseConnected = true;
 
-        $stmt = $dbh->prepare("INSERT INTO NEWS (content) VALUES (:content)");
-        $stmt->bindParam(':content', $news);
-        echo "Jõuti siia.";
+    $stmt = $conn->prepare("INSERT INTO news (content) VALUES (:content)");
+    $stmt->bindParam(':content', $news);
+    $stmt->execute();
+    $textHasValue = true;
 
-    }
-    catch(PDOException $e)
-    {
-        echo "Connection failed: " . $e->getMessage();
-    }
 
 }
+
+include('templates/sisesta_template.php');
 
 ?>
 
