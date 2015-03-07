@@ -19,7 +19,7 @@ include('header_template.php');
         <div id="left-sidebar">
             <ul>
                 <li><a href="#">Kuva uudised</a> </li>
-                <li><a href="../sisesta.php">Sisesta uudised</a> </li>
+                <li><a href="sisesta.php">Sisesta uudised</a> </li>
             </ul>
         </div>
 
