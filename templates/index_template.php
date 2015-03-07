@@ -17,19 +17,20 @@ include('header_template.php');
 <div id="content">
     <div id="left-sidebar">
         <ul>
-            <li><a href="#">Kuva uudised</a> </li>
-            <li><a href="./sisesta.php">Sisesta uudised</a> </li>
+            <li><a href="#" id="show-news">Kuva uudised</a> </li>
+            <li><a href="#" id="show-news-input">Sisesta uudised</a> </li>
         </ul>
     </div>
 
 
     <div id="content-col-1" class="content-col">
-        <p>Sisu</p>
 
+        <!-- uudiste kuvamine -->
         <?php
         if(count($messages) > 0) {
             foreach($messages as $message) {
-                echo "<p>".$message["message"]."</p>";
+                echo "<h3>".$message["title"]."</h3>";
+                echo "<p>".$message["content"]."</p>";
             }
         } else {
             echo "<p>mingi jama</p>";
@@ -38,7 +39,10 @@ include('header_template.php');
     </div>
 
     <div id="content-col-2" class="not content-col">
-        <p>Siia tuleks the sisestamine</p>
+        <!-- uudiste sisestamine -->
+        <?php
+            include('sisesta_template.php');
+        ?>
     </div>
 </div>
 

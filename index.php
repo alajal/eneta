@@ -1,7 +1,7 @@
 <?php
-require_once 'functions.php';
+require_once '/mysql-tasklist/news/getitems.php';
 
-$messages = getMessages();
+$messages = getNews();
 
 include('templates/index_template.php');
 ?>

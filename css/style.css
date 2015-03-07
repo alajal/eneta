@@ -2,7 +2,13 @@
     display: none;
 }
 
-
+body {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5px;
+    background-color: ghostwhite;
+}
 
 .bottom {
     width: 100%;
