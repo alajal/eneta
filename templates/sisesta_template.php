@@ -1,34 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Eneta</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="../js/main.js"></script>
-</head>
-<body>
 
-    <form method="post">
-        Lisa uudis:<br>
-        <input type="text" name="text">
+<form action="./mysql-tasklist/news/additem.php" method="post">
+    <p>Pealkiri</p>
+    <textarea type="text" name="input-news-title" maxlength="255" rows="1" cols="50"></textarea>
+    <p>Sisu</p>
+    <textarea name="input-news-content" rows="10" cols="50"></textarea>
+    <br>
+    <input type="submit" name="submit-news">
+    <br>
 
-        <input type="submit" name="submit">
-        <br>
+</form>
 
-    </form>
-
-    <?php
-        if($sqlDatabaseConnected) {
-            echo "<p>Tere</p>";
-        }
-        if($textHasValue) {
-            echo "<p>Kõik õnnestus</p>";
-        }
-    ?>
-
-
-
-</body>
-</html>
