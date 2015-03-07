@@ -5,7 +5,7 @@
     <title>Eneta</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/jquery-2.1.3.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
@@ -23,20 +23,23 @@ include('header_template.php');
             </ul>
         </div>
 
-        <div id="first-content-col">
-            <p>Sisu</p>
 
-            <?php
-            if(count($messages) > 0) {
-                foreach($messages as $message) {
-                    echo "<p>".$message["message"]."</p>";
-                }
-            } else {
-                echo "<p>mingi jama</p>";
+    <div id="content-col-1" class="content-col">
+        <p>Sisu</p>
+
+        <?php
+        if(count($messages) > 0) {
+            foreach($messages as $message) {
+                echo "<p>".$message["message"]."</p>";
             }
-            ?>
-        </div>
+        } else {
+            echo "<p>mingi jama</p>";
+        }
+        ?>
+    </div>
 
+    <div id="content-col-2" class="not content-col">
+        <p>Siia tuleks the sisestamine</p>
     </div>
 </div>
 
