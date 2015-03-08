@@ -20,24 +20,14 @@ include('header_template.php');
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
                 <li><a href="#" id="show-news-input">Sisesta uudised</a> </li>
-                <li><a href="#" id="show-users-news">Kasutajate uudised</a> </li>
             </ul>
         </div>
-
-
 
     <div id="content-col-1" class="content-col">
 
         <!-- uudiste kuvamine -->
         <?php
-        if(count($messages) > 0) {
-            foreach($messages as $message) {
-                echo "<h3>".$message["title"]."</h3>";
-                echo "<p>".$message["content"]."</p>";
-            }
-        } else {
-            echo "<p>mingi jama</p>";
-        }
+            include('sisestatud_template.php');
         ?>
     </div>
 
@@ -47,12 +37,6 @@ include('header_template.php');
             include('sisesta_template.php');
         ?>
     </div>
-
-    <div id="content-col-3" class="not content-col">
-        <?php
-            include('sisestatud_template.php');
-        ?>
-     </div>
 
 </div>
 

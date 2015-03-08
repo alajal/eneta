@@ -58,4 +58,12 @@ function deleteNews($news_id)
     $stmt->bindValue(1, $news_id);
     $stmt->execute();
 }
+
+function getUsersAndNews()
+{
+    $conn = connectToDatabase();
+    $stmt = $conn->query("select users.mail, users.firstname, users.lastname, news.title, news.content from news inner join users on news.user = users.mail order by news.datetime DESC;");
+    return $stmt->fetchAll(); //Returns an array containing all of the result set rows
+}
+$usersAndNews = getUsersAndNews();
 ?>
