@@ -1,8 +1,8 @@
 <?php
-require_once 'mysql-tasklist/news/functions.php';
+require_once '/mysql-tasklist/news/functions.php';
 $messages = getNews();
 
-include('templates/index_template.php');
+include('/templates/index_template.php');
 ?>
 
 <!--
