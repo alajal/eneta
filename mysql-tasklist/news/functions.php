@@ -1,7 +1,7 @@
 <!--https://github.com/Azure/azure-sdk-for-php-samples/tree/master/tasklist-mysql -->
 <?php
 
-require_once "/config.php";
+require_once "config.php";
 
 function connectToDatabase()
 {
