@@ -65,4 +65,12 @@ function getUsersAndNews()
     return $stmt->fetchAll(); //Returns an array containing all of the result set rows
 }
 
+
+function getUsers()
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT * FROM users";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
 ?>

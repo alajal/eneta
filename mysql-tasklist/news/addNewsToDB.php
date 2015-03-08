@@ -2,7 +2,7 @@
 
 include_once (__DIR__."/functions.php");
 
-$news_user = "unknown";
+$news_user = $_POST['input-news-user'];
 $news_title = $_POST['input-news-title'];
 $news_content = $_POST['input-news-content'];
 $news_date = date("Y-m-d H:i:s");
