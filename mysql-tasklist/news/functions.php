@@ -74,4 +74,12 @@ function getUsers()
     return $stmt->fetchAll();
 }
 
+function getNbrOfNewsByUsers()
+{
+    $conn = connectToDatabase();
+    $sql = "select users.mail, users.firstname, users.lastname, count(news.title) as arv from news inner join users on news.user = users.mail GROUP BY users.mail";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
 ?>

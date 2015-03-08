@@ -20,6 +20,7 @@ include('header_template.php');
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
                 <li><a href="#" id="show-news-input">Sisesta uudised</a> </li>
+                <li><a href="#" id="show-news-statistics">Uudiste statistika</a> </li>
             </ul>
         </div>
 
@@ -35,6 +36,13 @@ include('header_template.php');
         <!-- uudiste sisestamine -->
         <?php
             include('sisesta_template.php');
+        ?>
+    </div>
+
+    <div id="content-col-3" class="not content-col">
+        <!-- statistika kuvamine -->
+        <?php
+        include('news_statistika_template.php');
         ?>
     </div>
 
