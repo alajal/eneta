@@ -1,4 +1,3 @@
-<!--https://github.com/Azure/azure-sdk-for-php-samples/tree/master/tasklist-mysql -->
 <?php
 
 include_once (__DIR__."/../../config.php");
@@ -65,5 +64,5 @@ function getUsersAndNews()
     $stmt = $conn->query("select users.mail, users.firstname, users.lastname, news.title, news.content from news inner join users on news.user = users.mail order by news.datetime DESC;");
     return $stmt->fetchAll(); //Returns an array containing all of the result set rows
 }
-$usersAndNews = getUsersAndNews();
+
 ?>
