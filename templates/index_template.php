@@ -21,6 +21,7 @@ include('header_template.php');
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
                 <li><a href="#" id="show-news-input">Sisesta uudised</a> </li>
+                <li><a href="#" id="show-users-news">Kasutajate uudised</a> </li>
             </ul>
         </div>
 
@@ -47,6 +48,13 @@ include('header_template.php');
             include('sisesta_template.php');
         ?>
     </div>
+
+    <div id="content-col-3" class="not content-col">
+        <?php
+            include('sisestatud_template.php');
+        ?>
+     </div>
+
 </div>
 
 <?php
