@@ -1,7 +1,7 @@
 <!--https://github.com/Azure/azure-sdk-for-php-samples/tree/master/tasklist-mysql -->
 <?php
 
-require_once dirname(__FILE__)."/../../config.php";
+include_once (__DIR__."/../../config.php");
 
 function connectToDatabase()
 {
