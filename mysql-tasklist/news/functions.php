@@ -33,7 +33,7 @@ function markItemComplete($item_id)
 function getNews()
 {
     $conn = connectToDatabase();
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news ORDER BY datetime DESC";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll();
 }

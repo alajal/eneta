@@ -16,7 +16,6 @@ include('header_template.php');
 
 <div id="content">
 
-    <div id="content-container">
         <div id="left-sidebar">
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
