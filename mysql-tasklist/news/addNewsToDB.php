@@ -1,6 +1,6 @@
 <?php
 
-include_once 'functions.php';
+include_once (__DIR__."/functions.php");
 
 $news_user = "unknown";
 $news_title = $_POST['input-news-title'];

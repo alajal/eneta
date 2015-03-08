@@ -1,7 +1,7 @@
 <!--https://github.com/Azure/azure-sdk-for-php-samples/tree/master/tasklist-mysql -->
 <?php
 
-require_once dirname(__FILE__)."/../../config.php";
+include_once (__DIR__."/../../config.php");
 
 function connectToDatabase()
 {
@@ -33,7 +33,7 @@ function markItemComplete($item_id)
 function getNews()
 {
     $conn = connectToDatabase();
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news ORDER BY datetime DESC";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll();
 }
@@ -58,4 +58,12 @@ function deleteNews($news_id)
     $stmt->bindValue(1, $news_id);
     $stmt->execute();
 }
+
+function getUsersAndNews()
+{
+    $conn = connectToDatabase();
+    $stmt = $conn->query("select users.mail, users.firstname, users.lastname, news.title, news.content from news inner join users on news.user = users.mail order by news.datetime DESC;");
+    return $stmt->fetchAll(); //Returns an array containing all of the result set rows
+}
+$usersAndNews = getUsersAndNews();
 ?>

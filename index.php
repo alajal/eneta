@@ -1,6 +1,6 @@
 <?php
 require_once 'mysql-tasklist/news/functions.php';
-$messages = getNews();
+$messages = getUsersAndNews();
 
 include('templates/index_template.php');
 ?>
