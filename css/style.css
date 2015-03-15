@@ -110,3 +110,9 @@ a{
 .news-author {
     color: #AD85FF;
 }
+
+.news-mod-link {
+    color: darkgoldenrod;
+    font-family: Verdana, sans-serif;
+    font-size: 10px;
+}

@@ -61,7 +61,7 @@ function deleteNews($news_id)
 function getUsersAndNews()
 {
     $conn = connectToDatabase();
-    $stmt = $conn->query("select users.mail, users.firstname, users.lastname, news.title, news.content from news inner join users on news.user = users.mail order by news.datetime DESC;");
+    $stmt = $conn->query("select users.mail, users.firstname, users.lastname, news.id, news.title, news.content from news inner join users on news.user = users.mail order by news.datetime DESC;");
     return $stmt->fetchAll(); //Returns an array containing all of the result set rows
 }
 
