@@ -49,6 +49,19 @@ function addNews($user, $title, $content, $date)
     $stmt->execute();
 }
 
+function updateNews($id, $user, $title, $content, $date)
+{
+    $conn = connectToDatabase();
+    $sql = "UPDATE news SET news.user=?, title=?, content=?, datetime=? WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $user);
+    $stmt->bindValue(2, $title);
+    $stmt->bindValue(3, $content);
+    $stmt->bindValue(4, $date);
+    $stmt->bindValue(5, $id);
+    $stmt->execute();
+}
+
 function deleteNews($news_id)
 {
     $conn = connectToDatabase();
@@ -61,10 +74,22 @@ function deleteNews($news_id)
 function getUsersAndNews()
 {
     $conn = connectToDatabase();
-    $stmt = $conn->query("select users.mail, users.firstname, users.lastname, news.id, news.title, news.content from news inner join users on news.user = users.mail order by news.datetime DESC;");
+    $sql = "select users.mail, users.firstname, users.lastname, news.id, news.title, news.content
+            from news inner join users on news.user = users.mail
+            order by news.datetime DESC";
+    $stmt = $conn->query($sql);
     return $stmt->fetchAll(); //Returns an array containing all of the result set rows
 }
 
+function getUsersAndNewsById($id)
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT users.mail, users.firstname, users.lastname, news.id, news.title, news.content
+            FROM news INNER JOIN users ON news.user = users.mail
+            WHERE news.id = $id";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll(); //Returns an array containing all of the result set rows
+}
 
 function getUsers()
 {

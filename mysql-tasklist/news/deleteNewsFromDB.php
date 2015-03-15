@@ -2,7 +2,7 @@
 
 include_once (__DIR__."/functions.php");
 
-$id = $_GET['id'];
+$id = $_GET["id"];
 
 deleteNews($id);
 
