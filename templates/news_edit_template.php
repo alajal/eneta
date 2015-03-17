@@ -26,9 +26,9 @@ echo "
             if(count($users) > 0) {
                 foreach($users as $user) {
                     if ($user["mail"] == $update_news_user) {
-                        echo "<option value={$user["mail"]} selected>{$user["firstname"]} {$user["lastname"]}</option>";
+                        echo "<option value='{$user["mail"]}' selected>{$user["firstname"]} {$user["lastname"]}</option>";
                     } else {
-                        echo "<option value={$user["mail"]}>{$user["firstname"]} {$user["lastname"]}</option>";
+                        echo "<option value='{$user["mail"]}'>{$user["firstname"]} {$user["lastname"]}</option>";
                     }
                 }
             } else {
