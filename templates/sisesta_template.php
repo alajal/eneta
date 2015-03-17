@@ -2,7 +2,7 @@
 <form action="mysql-tasklist/news/addNewsToDB.php" method="post">
     <p>
         <span>Vali autor: </span>
-        <select name="input-news-user">
+        <select name="input-news-user" title="blablaa">
             <?php
             if(count($users) > 0) {
                 foreach($users as $user) {
