@@ -11,7 +11,7 @@
 <body>
 
 <?php
-include('templates/header_template.php')
+include('templates/header_template.html')
 ?>
 
 
@@ -32,7 +32,7 @@ include('templates/header_template.php')
     </div>
 
 <?php
-include('templates/footer_template.php')
+include('templates/footer_template.html')
 ?>
 
 </body>
