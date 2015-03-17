@@ -11,7 +11,7 @@
 <body>
 
 <?php
-include('header_template.php');
+include('header_template.html');
 ?>
 
 <div id="content">
@@ -50,7 +50,7 @@ include('header_template.php');
 </div>
 
 <?php
-include('footer_template.php');
+include('footer_template.html');
 ?>
 
 </body>
