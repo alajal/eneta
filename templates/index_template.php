@@ -31,6 +31,7 @@ include('header_template.html');
         <?php
             include('sisestatud_template.php');
         ?>
+        <button id="load_more_news_button">Lae veel uudiseid</button>
     </div>
 
     <div id="content-col-2" class="not content-col">
@@ -52,6 +53,13 @@ include('header_template.html');
 <?php
 include('footer_template.html');
 ?>
+
+<!-- et saaks JS kasutada, kergem kui ajaxit teha veel -->
+<div id="nbr_of_total_news_pages" class="not">
+    <?php
+    echo htmlspecialchars($nbr_of_pages);
+    ?>
+</div>
 
 </body>
 </html>

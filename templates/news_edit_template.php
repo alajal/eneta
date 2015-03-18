@@ -6,14 +6,12 @@ include_once (__DIR__."/../mysql-tasklist/news/functions.php");
 $update_news_id = $_GET["id"];
 
 // otseselt tegelt pole vaja baasist uuesti kysida..aga 2kki parem?
-// vaja ainult yhte rida/kirjet..ei oska paremini
-$update_news_rows = getUsersAndNewsById($update_news_id);
-foreach($update_news_rows as $update_news) {
-    $update_news_user = $update_news["mail"];
-    $update_news_title = $update_news["title"];
-    $update_news_content = $update_news["content"];
-    break;
-}
+$update_news = getUsersAndNewsById($update_news_id);
+
+$update_news_user = $update_news["mail"];
+$update_news_title = $update_news["title"];
+$update_news_content = $update_news["content"];
+
 
 $users = getUsers();
 

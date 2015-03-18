@@ -71,12 +71,12 @@ function deleteNews($news_id)
     $stmt->execute();
 }
 
-function getUsersAndNews()
+function getUsersAndNews($start_row, $nbr_of_rows)
 {
     $conn = connectToDatabase();
     $sql = "select users.mail, users.firstname, users.lastname, news.id, news.title, news.content
             from news inner join users on news.user = users.mail
-            order by news.datetime DESC";
+            order by news.datetime DESC LIMIT $start_row, $nbr_of_rows";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll(); //Returns an array containing all of the result set rows
 }
@@ -88,7 +88,7 @@ function getUsersAndNewsById($id)
             FROM news INNER JOIN users ON news.user = users.mail
             WHERE news.id = $id";
     $stmt = $conn->query($sql);
-    return $stmt->fetchAll(); //Returns an array containing all of the result set rows
+    return $stmt->fetch();
 }
 
 function getUsers()
@@ -106,4 +106,14 @@ function getNbrOfNewsByUsers()
     $stmt = $conn->query($sql);
     return $stmt->fetchAll();
 }
+
+function getTotalNbrOfNews()
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT COUNT(*) arv FROM news";
+    $stmt = $conn->query($sql);
+    return $stmt->fetch()["arv"];
+}
+
 ?>
+
