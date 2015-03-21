@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery-2.1.3.js"></script>
-    <script src="js/main.js"></script>
+    <!--script src="js/main.js"></script-->
 </head>
 <body>
 
