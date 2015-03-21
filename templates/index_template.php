@@ -37,7 +37,7 @@ include('header_template.html');
     <div id="content-col-2" class="not content-col">
         <!-- uudiste sisestamine -->
         <?php
-            include('sisesta_template.php');
+            include('news_edit_template.php');
         ?>
     </div>
 

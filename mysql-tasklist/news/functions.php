@@ -126,5 +126,24 @@ function getUsersAndNewsAfterDate($datetime)
     return $stmt->fetchAll();
 }
 
+function getNewsHtml($messages) {
+    $data = "";
+    foreach($messages as $message) {
+        $data .= "
+            <div class='news-story' id='news_{$message["id"]}'>
+                <h3 class='news-title'>{$message["title"]}</h3>
+                <p class='news-author'>Autor: {$message["firstname"]} {$message["lastname"]}</p>
+                <p class='news-content'>{$message["content"]}</p>
+                <p class='news-mod-link'>
+                    <a href='mysql-tasklist/news/deleteNewsFromDB.php?id={$message["id"]}'>Kustuta</a>
+                    <span> | </span>
+                    <a href='#' class='edit_news_button'>Muuda</a>
+                </p>
+            </div>
+            ";
+    }
+    return $data;
+}
+
 ?>
 

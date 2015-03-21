@@ -1,47 +1,33 @@
-<?php
 
-include_once (__DIR__."/../mysql-tasklist/news/functions.php");
-
-// v22rtus tulevad uudiselt GETg'a
-$update_news_id = $_GET["id"];
-
-// otseselt tegelt pole vaja baasist uuesti kysida..aga 2kki parem?
-$update_news = getUsersAndNewsById($update_news_id);
-
-$update_news_user = $update_news["mail"];
-$update_news_title = $update_news["title"];
-$update_news_content = $update_news["content"];
-
-
-$users = getUsers();
-
-echo "
-<form action='../mysql-tasklist/news/updateNewsInDB.php?id=$update_news_id' method='post'>
+<form action="" method="post" id="edit-news-form-id">
     <p>
-        <span>Vali autor: </span>
-        <select name='input-news-user'>
-";
+        <label for="edit-news-user-id">Vali autor: </label>
+        <select name="edit-news-user" id="edit-news-user-id">
+            <?php
             if(count($users) > 0) {
                 foreach($users as $user) {
-                    if ($user["mail"] == $update_news_user) {
-                        echo "<option value='{$user["mail"]}' selected>{$user["firstname"]} {$user["lastname"]}</option>";
-                    } else {
-                        echo "<option value='{$user["mail"]}'>{$user["firstname"]} {$user["lastname"]}</option>";
-                    }
+                    echo "<option value='".$user["mail"]."'>".$user["firstname"]." ".$user["lastname"]."</option>";
                 }
             } else {
                 echo "<p>mingi jama</p>";
             }
-echo "
+            ?>
         </select>
     </p>
-    <p>Pealkiri</p>
-    <textarea name='input-news-title' maxlength='255' rows='1' cols='50'>$update_news_title</textarea>
-    <p>Sisu</p>
-    <textarea name='input-news-content' rows='10' cols='50'>$update_news_content</textarea>
+
+    <p>
+        <label for="edit-news-title-id">Pealkiri</label>
+        <br>
+        <textarea name="edit-news-title" id="edit-news-title-id" maxlength="255" rows="1" cols="50"></textarea>
+    </p>
+
+    <p>
+        <label for="edit-news-content-id">Sisu</label>
+        <br>
+        <textarea name="edit-news-content" id="edit-news-content-id" rows="10" cols="50"></textarea>
+    </p>
+
     <br>
-    <input type='submit' name='update-news'>
-    <br>
+    <input type="submit" name="edit-submit-news">
 
 </form>
-";

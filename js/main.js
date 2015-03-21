@@ -43,14 +43,33 @@ $(document).ready(function(){
         $("#content-col-1").addClass("not");
         $("#content-col-2").removeClass("not");
         $("#content-col-3").addClass("not");
+        var input_news_form_target = "mysql-tasklist/news/addNewsToDB.php";
+        $("#edit-news-form-id").attr("action", input_news_form_target);
+        $("#edit-news-form-id")[0].reset();
     });
     $("#show-news-statistics").click(function(){
         $("#content-col-1").addClass("not");
         $("#content-col-2").addClass("not");
         $("#content-col-3").removeClass("not");
     });
+    $(".edit_news_button").click(function(){
+        $("#content-col-1").addClass("not");
+        $("#content-col-2").removeClass("not");
 
-    getNewNews(getCurrentTime());
+        // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
+        var news_id = ($(this).parent().parent().attr("id")).substr(5);
+        var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
+        $("#edit-news-form-id").attr("action", edit_news_form_target);
+
+        // kysime pealkirja ja sisu v22rtused ning t2idame need
+        var title = $(this).parent().prevUntil(".news-title").last().prev().text();
+        var content = $(this).parent().prev().text();
+        $("#edit-news-title-id").val(title);
+        $("#edit-news-content-id").val(content);
+
+    });
+
+
     //getNewNews('2015-03-20 18:06:54');
 
     var current_page = 1;
@@ -69,5 +88,7 @@ $(document).ready(function(){
             }
         });
     });
+
+    getNewNews(getCurrentTime());
 
 });
