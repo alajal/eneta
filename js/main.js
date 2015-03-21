@@ -9,7 +9,7 @@ function getNewNews(last_news_time) {
                 var obj = $.parseJSON(data);
 
                 $("#content-col-1").prepend(obj.sisu);
-
+                addEditButtonListener();
                 getNewNews(obj.timestamp);
             });
 }
@@ -32,6 +32,25 @@ function getCurrentTime() {
     return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 }
 
+function addEditButtonListener() {
+    $(".edit_news_button").click(function(){
+        $("#content-col-1").addClass("not");
+        $("#content-col-2").removeClass("not");
+
+        // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
+        var news_id = ($(this).parent().parent().attr("id")).substr(5);
+        var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
+        $("#edit-news-form-id").attr("action", edit_news_form_target);
+
+        // kysime pealkirja ja sisu v22rtused ning t2idame need
+        var title = $(this).parent().prevUntil(".news-title").last().prev().text();
+        var content = $(this).parent().prev().text();
+        $("#edit-news-title-id").val(title);
+        $("#edit-news-content-id").val(content);
+
+    });
+}
+
 /*kuva ja peidab sisu elemente vastavalt valitud lingile*/
 $(document).ready(function(){
     $("#show-news").click(function(){
@@ -52,22 +71,7 @@ $(document).ready(function(){
         $("#content-col-2").addClass("not");
         $("#content-col-3").removeClass("not");
     });
-    $(".edit_news_button").click(function(){
-        $("#content-col-1").addClass("not");
-        $("#content-col-2").removeClass("not");
-
-        // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
-        var news_id = ($(this).parent().parent().attr("id")).substr(5);
-        var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
-        $("#edit-news-form-id").attr("action", edit_news_form_target);
-
-        // kysime pealkirja ja sisu v22rtused ning t2idame need
-        var title = $(this).parent().prevUntil(".news-title").last().prev().text();
-        var content = $(this).parent().prev().text();
-        $("#edit-news-title-id").val(title);
-        $("#edit-news-content-id").val(content);
-
-    });
+    addEditButtonListener();
 
 
     //getNewNews('2015-03-20 18:06:54');
@@ -79,6 +83,7 @@ $(document).ready(function(){
     $("#load_more_news_button").click(function() {
         $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
             $("#content-col-1").append(data);
+            addEditButtonListener();
             current_page++;
             // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
             if (current_page < total_nbr_of_pages) {
