@@ -1,5 +1,5 @@
 
-<form action="" method="post" id="edit-news-form-id">
+<form action="mysql-tasklist/news/addNewsToDB.php" method="post" id="edit-news-form-id">
     <p>
         <label for="edit-news-user-id">Vali autor: </label>
         <select name="edit-news-user" id="edit-news-user-id">
