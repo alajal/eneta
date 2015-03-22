@@ -115,6 +115,25 @@ $(document).ready(function(){
     var current_page = 1;
     // var total_nbr_of_pages = document.getElementById("nbr_of_total_news_pages").textContent;
     var total_nbr_of_pages = $("#nbr_of_total_news_pages").text();
+    var old_scroll = 0;
+
+    $(window).scroll(function() {
+        if( $(window).scrollTop() > old_scroll ){ //if we are scrolling down
+            if( ($(window).scrollTop() + $(window).height() >= $(document).height()  ) && (current_page < total_nbr_of_pages) ) {
+                $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
+                    $("#content-col-1").append(data);
+                    addEditButtonListener();
+                    current_page++;
+                    // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
+                    if (current_page < total_nbr_of_pages) {
+                        $("#load_more_news_button").appendTo("#content-col-1");
+                    } else {
+                        $("#load_more_news_button").hide();
+                    }
+                });
+            }
+        }
+    });
 
     $("#load_more_news_button").click(function() {
         $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
