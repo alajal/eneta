@@ -6,7 +6,7 @@
     <meta name="google-signin-scope" content="profile" />
     <meta name="google-signin-cookiepolicy" content="single_host_origin" />
     <title>Eneta</title>
-    <!--link rel="stylesheet" href="css/bootstrap.css"-->
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery-2.1.3.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
@@ -43,7 +43,7 @@ include('header_template.html');
         <!-- uudiste sisestamine -->
         <?php
             include('news_edit_template.php');
-            include('../accessToken.php');
+            //include('../accessToken.php');
         ?>
     </div>
 

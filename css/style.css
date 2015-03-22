@@ -16,12 +16,6 @@ body {
     background-color: ghostwhite;
 }
 
-nav.top {
-    background-color: #e74d12;
-    overflow: hidden;
-    margin-bottom: 1rem;
-}
-
 .bottom {
     width: 100%;
     display: table;
@@ -45,6 +39,7 @@ nav.top {
     border-left: 1px solid #fff;
     border-right: 1px solid #ccc;
     width: 20%;
+    box-sizing: border-box;
 }
 
 .menu li:first-child {
@@ -66,24 +61,6 @@ nav.top {
     background-color: #fff;
 }
 
-.login-button {
-    display: block;
-    width: 150px;
-    height: 50px;
-    border: 1px solid #ffffff;
-    margin: 1.2rem;
-    padding: 1rem;
-    float: right;
-}
-
-.login-button a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.login-button a:hover {
-    text-decoration: underline;
-}
 
 .logo {
     background: url("../images/media-shuffle.png") no-repeat center;
@@ -126,7 +103,7 @@ footer {
 
 #left-sidebar ul {
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 1em;
 }
 
 #left-sidebar a {
@@ -152,6 +129,7 @@ footer {
 
 #signoutButton{
     display: none;
+
 }
 
 .news-mod-link a {
@@ -179,4 +157,39 @@ footer {
 
 .news-story:first-of-type h3 {
     margin-top: 0;
+}
+
+nav.top {
+    background-color: #e74d12;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+#signinbutton {
+    display: block;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    margin: 1.2rem;
+    padding: 1rem;
+    float: right;
+}
+
+.login-button {
+    display: block;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    margin: 1.2rem;
+    padding: 1rem;
+    float: right;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.login-button a:hover {
+    text-decoration: underline;
 }
