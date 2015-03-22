@@ -1,18 +1,21 @@
 
 <form action="" method="post" id="edit-news-form-id">
     <p>
-        <label for="edit-news-user-id">Vali autor: </label>
+        <label for="edit-news-user-id">Autori email: </label>
+
         <select name="edit-news-user" id="edit-news-user-id">
             <?php
             if(count($users) > 0) {
                 foreach($users as $user) {
                     echo "<option value='".$user["mail"]."'>".$user["firstname"]." ".$user["lastname"]."</option>";
+
                 }
             } else {
                 echo "<p>mingi jama</p>";
             }
             ?>
         </select>
+
     </p>
 
     <p>

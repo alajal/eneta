@@ -11,6 +11,7 @@ $users = getUsers();
 $news_statistics = getNbrOfNewsByUsers();
 
 include('templates/index_template.php');
+
 ?>
 
 <!--

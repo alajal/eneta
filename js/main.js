@@ -1,5 +1,3 @@
-console.log('Javascript on ka olemas.');
-
 function getNewNews(last_news_time) {
     var query_string = {'timestamp' : last_news_time};
 
@@ -51,8 +49,45 @@ function addEditButtonListener() {
     });
 }
 
-/*kuva ja peidab sisu elemente vastavalt valitud lingile*/
+function render() {
+
+    // Additional params including the callback, the rest of the params will
+    // come from the page-level configuration.
+    var additionalParams = {
+        'callback': signinCallback
+    };
+
+    // Attach a click listener to a button to trigger the flow.
+    var signinButton = document.getElementById('signinButton');
+    signinButton.addEventListener('click', function() {
+        gapi.auth.signIn(additionalParams); // Will use page level configuration
+    });
+}
+
+function signinCallback(authResult) {
+    if (authResult['status']['signed_in']) {
+        // Update the app to reflect a signed in user
+        // Hide the sign-in button now that the user is authorized:
+        document.getElementById('signinButton').setAttribute('style', 'display: none');
+        document.getElementById('signoutButton').setAttribute('style', 'display: inline')
+
+
+        $("#show-news-input").removeClass("not");
+        $.post("accessToken.php",authResult.access_token);
+    } else {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+        console.log('Sign-in state: ' + authResult['error']);
+    }
+}
+
+
+
 $(document).ready(function(){
+    /*kuva ja peidab sisu elemente vastavalt valitud lingile*/
     $("#show-news").click(function(){
         $("#content-col-1").removeClass("not");
         $("#content-col-2").addClass("not");
@@ -71,6 +106,7 @@ $(document).ready(function(){
         $("#content-col-2").addClass("not");
         $("#content-col-3").removeClass("not");
     });
+
     addEditButtonListener();
 
 
@@ -95,5 +131,4 @@ $(document).ready(function(){
     });
 
     getNewNews(getCurrentTime());
-
 });

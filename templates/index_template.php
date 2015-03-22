@@ -2,11 +2,16 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="google-signin-clientid" content="236342773769-k9q08n7gkh1lpse03vorof5mp2r2t4k6.apps.googleusercontent.com" />
+    <meta name="google-signin-scope" content="profile" />
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
     <title>Eneta</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery-2.1.3.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
     <script src="js/main.js"></script>
+
 </head>
 <body>
 
@@ -19,7 +24,7 @@ include('header_template.html');
         <div id="left-sidebar">
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
-                <li><a href="#" id="show-news-input">Sisesta uudised</a> </li>
+                <li><a href="#" id="show-news-input" class="not">Sisesta uudised</a> </li>
                 <li><a href="#" id="show-news-statistics">Uudiste statistika</a> </li>
             </ul>
         </div>
@@ -38,6 +43,7 @@ include('header_template.html');
         <!-- uudiste sisestamine -->
         <?php
             include('news_edit_template.php');
+            include('../accessToken.php');
         ?>
     </div>
 

@@ -6,6 +6,6 @@ if(count($news_statistics) > 0) {
         echo "<p>".$row["firstname"]." ".$row["lastname"].": ".$row["arv"]."</p>";
     }
 } else {
-    echo "<p>mingi jama</p>";
+    echo "<p>jama 2</p>";
 }
 ?>
