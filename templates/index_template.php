@@ -24,7 +24,7 @@ include('header_template.html');
         <div id="left-sidebar">
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
-                <li><a href="#" id="show-news-input" class="not">Sisesta uudised</a> </li>
+                <li><a href="#" id="show-news-input">Sisesta uudised</a> </li>
                 <li><a href="#" id="show-news-statistics">Uudiste statistika</a> </li>
             </ul>
         </div>
