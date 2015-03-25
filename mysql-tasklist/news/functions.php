@@ -10,20 +10,11 @@ function connectToDatabase()
     global $config_db_user;
     global $config_db_pwd;
     try{
-        //$conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-		
-		$conn = new PDO ("sqlsrv:server = $config_db_host; Database = $config_db_name", $config_db_user, $config_db_pwd);
+        $conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-		
     }
     catch(Exception $e){
-		try {
-			$conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch(Exception $e1) {
-			die(print_r($e));
-		}
+        die(print_r($e));
     }
     return $conn;
 }
