@@ -1,7 +1,7 @@
 <?php
 // saame browserilt ajax p2ringu (post) koos timestamp'ga
 // hyppame tsyklisse ning iga 5 sekundi tagant kysime baasist, kas on m5ni uudis, mille datetime > timestamp
-// kui on, siis kirjutame tulemi $messages ning includime sisestatud_template.php ning l5petame
+// kui on, siis kirjutame tulemi $messages ning includime news_show_template.php ning l5petame
 
 require(__DIR__."/functions.php");
 // browserilt tuli POST, kus timestamp seatud

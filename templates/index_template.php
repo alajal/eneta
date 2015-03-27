@@ -26,6 +26,7 @@ include('header_template.html');
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
                 <li><a href="#" id="show-news-input" class="not">Sisesta uudised</a> </li>
                 <li><a href="#" id="show-news-statistics">Uudiste statistika</a> </li>
+                <li><a href="#" id="show-profile" class="not">Profiil</a></li>
             </ul>
         </div>
 
@@ -34,7 +35,7 @@ include('header_template.html');
 
         <!-- uudiste kuvamine -->
         <?php
-            include('sisestatud_template.php');
+            include('news_show_template.php');
         ?>
         <button id="load_more_news_button">Lae veel uudiseid</button>
     </div>
@@ -50,10 +51,16 @@ include('header_template.html');
     <div id="content-col-3" class="not content-col">
         <!-- statistika kuvamine -->
         <?php
-        include('news_statistika_template.php');
+        include('news_statistics_template.php');
         ?>
     </div>
 
+    <div id="content-col-profile" class="not content-col">
+        <?php
+        include('profile_template.php');
+        ?>
+
+    </div>
 </div>
 
 <?php

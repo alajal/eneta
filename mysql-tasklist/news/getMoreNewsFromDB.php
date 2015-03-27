@@ -7,5 +7,5 @@ if( isset( $_POST['current_page_nbr'] ) ) {
     $current_page = intval($_POST['current_page_nbr']);
     $start = $current_page * $nbr_of_news_per_page;
     $messages = getUsersAndNews($start, $nbr_of_news_per_page);
-    include(__DIR__."/../../templates/sisestatud_template.php");
+    include(__DIR__ . "/../../templates/news_show_template.php");
 }

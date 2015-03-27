@@ -71,8 +71,8 @@ function signinCallback(authResult) {
         document.getElementById('signinButton').setAttribute('style', 'display: none');
         document.getElementById('signoutButton').setAttribute('style', 'display: inline');
 
-
         $("#show-news-input").removeClass("not");
+        $("#show-profile").removeClass("not");
         $.post("accessToken.php",authResult.access_token);
     } else {
     // Update the app to reflect a signed out user
@@ -85,18 +85,19 @@ function signinCallback(authResult) {
 }
 
 
-
 $(document).ready(function(){
     /*kuva ja peidab sisu elemente vastavalt valitud lingile*/
     $("#show-news").click(function(){
         $("#content-col-1").removeClass("not");
         $("#content-col-2").addClass("not");
         $("#content-col-3").addClass("not");
+        $("#content-col-profile").addClass("not");
     });
     $("#show-news-input").click(function(){
         $("#content-col-1").addClass("not");
         $("#content-col-2").removeClass("not");
         $("#content-col-3").addClass("not");
+        $("#content-col-profile").addClass("not");
         var input_news_form_target = "mysql-tasklist/news/addNewsToDB.php";
         $("#edit-news-form-id").attr("action", input_news_form_target);
         $("#edit-news-form-id")[0].reset();
@@ -105,6 +106,13 @@ $(document).ready(function(){
         $("#content-col-1").addClass("not");
         $("#content-col-2").addClass("not");
         $("#content-col-3").removeClass("not");
+        $("#content-col-profile").addClass("not");
+    });
+    $("#show-profile").click(function(){
+        $("#content-col-1").addClass("not");
+        $("#content-col-2").addClass("not");
+        $("#content-col-3").addClass("not");
+        $("#content-col-profile").removeClass("not");
     });
 
     addEditButtonListener();
