@@ -110,6 +110,11 @@ $(document).ready(function(){
         $("#content-col-statistics").addClass("not");
         $("#content-col-profile").removeClass("not");
     });
+    $("#signoutButton").click(function(){
+        $.post("logout.php").always(function(){
+            location.reload();
+        });
+    });
 
     addEditButtonListener();
 

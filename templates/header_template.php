@@ -5,7 +5,7 @@
 
         <div class="inoutbutton">
             <?php if($loggedin) { ?>
-                <button id="signoutButton">Sign out with Google</button>
+                <button id="signoutButton">Sign out</button>
             <?php } else { ?>
             <button id="signinButton">Sign in with Google</button>
             <?php } ?>
