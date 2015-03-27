@@ -16,7 +16,7 @@
 <body>
 
 <?php
-include('header_template.html');
+include('header_template.php');
 ?>
 
 <div id="content">
@@ -24,14 +24,16 @@ include('header_template.html');
         <div id="left-sidebar">
             <ul>
                 <li><a href="#" id="show-news">Kuva uudised</a> </li>
-                <li><a href="#" id="show-news-input" class="not">Sisesta uudised</a> </li>
                 <li><a href="#" id="show-news-statistics">Uudiste statistika</a> </li>
-                <li><a href="#" id="show-profile" class="not">Profiil</a></li>
+                <?php if($loggedin) { ?>
+                        <li><a href="#" id="show-news-input" >Sisesta uudised</a> </li>
+                        <li><a href="#" id="show-profile" >Profiil</a></li>
+                <?php } ?>
             </ul>
         </div>
 
 
-    <div id="content-col-1" class="content-col">
+    <div id="content-col-seenews" class="content-col">
 
         <!-- uudiste kuvamine -->
         <?php
@@ -40,7 +42,7 @@ include('header_template.html');
         <button id="load_more_news_button">Lae veel uudiseid</button>
     </div>
 
-    <div id="content-col-2" class="not content-col">
+    <div id="content-col-insert" class="not content-col">
         <!-- uudiste sisestamine -->
         <?php
             include('news_edit_template.php');
@@ -48,7 +50,7 @@ include('header_template.html');
         ?>
     </div>
 
-    <div id="content-col-3" class="not content-col">
+    <div id="content-col-statistics" class="not content-col">
         <!-- statistika kuvamine -->
         <?php
         include('news_statistics_template.php');

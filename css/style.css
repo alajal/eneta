@@ -127,10 +127,6 @@ footer {
     font-size: 10px;
 }
 
-#signoutButton{
-    display: none;
-}
-
 .news-mod-link a {
     text-decoration: none;
 }
@@ -164,19 +160,7 @@ nav.top {
     margin-bottom: 1rem;
 }
 
-/*
-#signinbutton {
-    display: block;
-    width: 150px;
-    height: 50px;
-    border: 1px solid #ffffff;
-    margin: 1.2rem;
-    padding: 1rem;
-    float: right;
-}
-*/
-
-.login-button {
+.inoutbutton {
     display: block;
     width: 150px;
     height: 50px;
@@ -186,11 +170,11 @@ nav.top {
     float: right;
 }
 
-.login-button a {
+.inoutbutton a {
     text-decoration: none;
     color: #ffffff;
 }
 
-.login-button a:hover {
+.inoutbutton a:hover {
     text-decoration: underline;
 }

@@ -3,11 +3,15 @@
     <nav class="top">
         <p class="logo"></p>
 
-        <div class="login-button">
-            <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
-            <!--<a href="https://accounts.google.com/o/oauth2/auth?redirect_uri=http://localhost/index.php#">Login</a>-->
+        <div class="inoutbutton">
+            <?php if($loggedin) { ?>
+                <button id="signoutButton">Sign out with Google</button>
+            <?php } else { ?>
             <button id="signinButton">Sign in with Google</button>
-            <button id="signoutButton">Sign out with Google</button>
+            <?php } ?>
+
+            <!--kui kasutaja on sisse logitud, kuvatakse tema nimi
+            //TODO-->
 
        </div>
    </nav>

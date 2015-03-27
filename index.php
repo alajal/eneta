@@ -1,4 +1,5 @@
 <?php
+include('session.php');
 date_default_timezone_set("Europe/Tallinn");
 
 require_once 'mysql-tasklist/news/functions.php';
@@ -9,6 +10,8 @@ $messages = getUsersAndNews(0, $nbr_of_news_per_page);
 
 $users = getUsers();
 $news_statistics = getNbrOfNewsByUsers();
+
+$loggedin = isUserLoggedIn();
 
 include('templates/index_template.php');
 

@@ -6,7 +6,7 @@ function getNewNews(last_news_time) {
             function (data) {
                 var obj = $.parseJSON(data);
 
-                $("#content-col-1").prepend(obj.sisu);
+                $("#content-col-seenews").prepend(obj.sisu);
                 addEditButtonListener();
                 getNewNews(obj.timestamp);
             });
@@ -32,8 +32,8 @@ function getCurrentTime() {
 
 function addEditButtonListener() {
     $(".edit_news_button").click(function(){
-        $("#content-col-1").addClass("not");
-        $("#content-col-2").removeClass("not");
+        $("#content-col-seenews").addClass("not");
+        $("#content-col-insert").removeClass("not");
 
         // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
         var news_id = ($(this).parent().parent().attr("id")).substr(5);
@@ -67,13 +67,9 @@ function render() {
 function signinCallback(authResult) {
     if (authResult['status']['signed_in']) {
         // Update the app to reflect a signed in user
-        // Hide the sign-in button now that the user is authorized:
-        document.getElementById('signinButton').setAttribute('style', 'display: none');
-        document.getElementById('signoutButton').setAttribute('style', 'display: inline');
-
-        $("#show-news-input").removeClass("not");
-        $("#show-profile").removeClass("not");
-        $.post("accessToken.php",authResult.access_token);
+        $.post("accessToken.php",authResult.access_token).always(function(){
+            location.reload();  //lehe refreshimiseks
+        });
     } else {
     // Update the app to reflect a signed out user
     // Possible error values:
@@ -88,30 +84,30 @@ function signinCallback(authResult) {
 $(document).ready(function(){
     /*kuva ja peidab sisu elemente vastavalt valitud lingile*/
     $("#show-news").click(function(){
-        $("#content-col-1").removeClass("not");
-        $("#content-col-2").addClass("not");
-        $("#content-col-3").addClass("not");
+        $("#content-col-seenews").removeClass("not");
+        $("#content-col-insert").addClass("not");
+        $("#content-col-statistics").addClass("not");
         $("#content-col-profile").addClass("not");
     });
     $("#show-news-input").click(function(){
-        $("#content-col-1").addClass("not");
-        $("#content-col-2").removeClass("not");
-        $("#content-col-3").addClass("not");
+        $("#content-col-seenews").addClass("not");
+        $("#content-col-insert").removeClass("not");
+        $("#content-col-statistics").addClass("not");
         $("#content-col-profile").addClass("not");
         var input_news_form_target = "mysql-tasklist/news/addNewsToDB.php";
         $("#edit-news-form-id").attr("action", input_news_form_target);
         $("#edit-news-form-id")[0].reset();
     });
     $("#show-news-statistics").click(function(){
-        $("#content-col-1").addClass("not");
-        $("#content-col-2").addClass("not");
-        $("#content-col-3").removeClass("not");
+        $("#content-col-seenews").addClass("not");
+        $("#content-col-insert").addClass("not");
+        $("#content-col-statistics").removeClass("not");
         $("#content-col-profile").addClass("not");
     });
     $("#show-profile").click(function(){
-        $("#content-col-1").addClass("not");
-        $("#content-col-2").addClass("not");
-        $("#content-col-3").addClass("not");
+        $("#content-col-seenews").addClass("not");
+        $("#content-col-insert").addClass("not");
+        $("#content-col-statistics").addClass("not");
         $("#content-col-profile").removeClass("not");
     });
 
@@ -129,7 +125,7 @@ $(document).ready(function(){
         if( $(window).scrollTop() > old_scroll ){ //if we are scrolling down
             if( ($(window).scrollTop() + $(window).height() >= $(document).height()  ) && (current_page < total_nbr_of_pages) ) {
                 $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
-                    $("#content-col-1").append(data);
+                    $("#content-col-seenews").append(data);
                     addEditButtonListener();
                     current_page++;
                     // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
@@ -145,7 +141,7 @@ $(document).ready(function(){
 
     $("#load_more_news_button").click(function() {
         $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
-            $("#content-col-1").append(data);
+            $("#content-col-seenews").append(data);
             addEditButtonListener();
             current_page++;
             // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
