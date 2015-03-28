@@ -23,11 +23,11 @@ include('header_template.php');
 
         <div id="left-sidebar">
             <ul>
-                <li><a href="#" id="show-news">Kuva uudised</a> </li>
-                <li><a href="#" id="show-news-statistics">Uudiste statistika</a> </li>
+                <li><a href="#uudised" id="show-news">Kuva uudised</a> </li>
+                <li><a href="#statistika" id="show-news-statistics">Uudiste statistika</a> </li>
                 <?php if($loggedin) { ?>
-                        <li><a href="#" id="show-news-input" >Sisesta uudised</a> </li>
-                        <li><a href="#" id="show-profile" >Profiil</a></li>
+                        <li><a href="#sisestauudis" id="show-news-input" >Sisesta uudised</a> </li>
+                        <li><a href="#profiil" id="show-profile" >Profiil</a></li>
                 <?php } ?>
             </ul>
         </div>
