@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery-2.1.3.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/grupid.js"></script>
 </head>
 <body>
 
@@ -17,15 +18,15 @@ include('header_template.php')
 <div id="content">
     <div id="left-sidebar">
         <ul>
-            <li><a href="#">Grupp 1</a> </li>
-            <li><a href="#">Grupp 2</a> </li>
+            <li><a class="grupid-select" href='/grupid/mct'>MCT</a> </li>
+            <li><a class="grupid-select" href='/grupid/msp'>MSP</a> </li>
+            <li><a class="grupid-select" href='/grupid/mvp'>MVP</a> </li>
         </ul>
     </div>
 
-    <div class="content-col">
-
-        <p>Sisu</p>
-
+    <div id="content-col-grupid" class="content-col">
+        <h3>Eneta</h3>
+        <p>Eneta.ee kommuuniportaal on info- ja suhtluskeskkond Microsofti tehnoloogiakasutajatele Eestis. Eneta eesmärk on koondada tehnoloogialane info, inimesed ja ettevõtted kokku ning pakkuda mugavat platvormi suhtlemiseks ja teadmiste jagamiseks.</p>
     </div>
 </div>
 
