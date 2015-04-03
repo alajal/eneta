@@ -5,7 +5,6 @@ function loadContent(url){
     });
 }
 
-
 $(document).ready(function(){
 
     $(".grupid-select").click(function(e) {
@@ -19,11 +18,21 @@ $(document).ready(function(){
 
     });
 
-    // THIS EVENT MAKES SURE THAT THE BACK/FORWARD BUTTONS WORK AS WELL
+    // back and forward buttons
     window.onpopstate = function(event) {
-        console.log("pathname: "+location.pathname);
-        loadContent(location.pathname);
+        console.log("pathname: " + location.href);
+        if (location.href.substr(-11) != "/grupid.php") {
+            loadContent(location.href);
+        } else {
+            location.href = "/grupid.php";
+        }
+
     };
+
+    // kui otse link
+    if (location.href.substr(-11) != "/grupid.php") {
+        loadContent(location.href);
+    }
 
 
 });

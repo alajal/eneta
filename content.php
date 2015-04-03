@@ -1,5 +1,8 @@
 <?php
 if (isset ($_GET["cid"])) {
     $filepath = $_GET["cid"];
-    echo file_get_contents("pages".$filepath.".html");
+
+    $start = strpos($filepath, "?") + 1;
+    $filepath = substr($filepath, $start);
+    echo file_get_contents("pages/grupid/".$filepath.".html");
 }

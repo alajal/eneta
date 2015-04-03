@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Eneta</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css"/>
-    <script src="js/jquery-2.1.3.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/grupid.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="/js/jquery-2.1.3.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/grupid.js"></script>
 </head>
 <body>
 
@@ -18,9 +18,9 @@ include('header_template.php')
 <div id="content">
     <div id="left-sidebar">
         <ul>
-            <li><a class="grupid-select" href='/grupid/mct'>MCT</a> </li>
-            <li><a class="grupid-select" href='/grupid/msp'>MSP</a> </li>
-            <li><a class="grupid-select" href='/grupid/mvp'>MVP</a> </li>
+            <li><a class="grupid-select" href='grupid.php?mct'>MCT</a> </li>
+            <li><a class="grupid-select" href='grupid.php?msp'>MSP</a> </li>
+            <li><a class="grupid-select" href='grupid.php?mvp'>MVP</a> </li>
         </ul>
     </div>
 
