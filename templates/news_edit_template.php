@@ -5,10 +5,11 @@
 
         <select name="edit-news-user" id="edit-news-user-id">
             <?php
+
+            //echo "<option value='x'>".$loggedInUserEmail."</option>";   //võtan sessionist kasutaja emaili
             if(count($users) > 0) {
                 foreach($users as $user) {
-                    echo "<option value='".$user["mail"]."'>".$user["firstname"]." ".$user["lastname"]."</option>";
-
+                    echo "<option value='".$user["mail"]."'>".$user["lastname"]."</option>";
                 }
             } else {
                 echo "<p>mingi jama</p>";

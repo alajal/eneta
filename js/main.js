@@ -34,7 +34,7 @@ $(document).ready(function(){
 
     $("#signoutButton").click(function(){
         $.post("logout.php").always(function(){
-            location.reload();
+            location.assign("index.php");
         });
     });
 
