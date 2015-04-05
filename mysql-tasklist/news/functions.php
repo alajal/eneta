@@ -137,7 +137,7 @@ function getNewsHtml($messages) {
                 <p class='news-mod-link'>
                     <a href='mysql-tasklist/news/deleteNewsFromDB.php?id={$message["id"]}'>Kustuta</a>
                     <span> | </span>
-                    <a href='#' class='edit_news_button'>Muuda</a>
+                    <a href='#edit_{$message["id"]}' class='edit_news_button'>Muuda</a>
                 </p>
             </div>
             ";

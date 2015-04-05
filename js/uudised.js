@@ -13,7 +13,6 @@ function getNewNews(last_news_time) {
             var obj = $.parseJSON(data);
 
             $("#content-col-seenews").prepend(obj.sisu);
-            addEditButtonListener();
             getNewNews(obj.timestamp);
         });
 }
@@ -36,24 +35,6 @@ function getCurrentTime() {
     return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 }
 
-function addEditButtonListener() {
-    $(".edit_news_button").click(function(){
-        $("#content-col-seenews").addClass("not");
-        $("#content-col-insert").removeClass("not");
-
-        // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
-        var news_id = ($(this).parent().parent().attr("id")).substr(5);
-        var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
-        $("#edit-news-form-id").attr("action", edit_news_form_target);
-
-        // kysime pealkirja ja sisu v22rtused ning t2idame need
-        var title = $(this).parent().prevUntil(".news-title").last().prev().text();
-        var content = $(this).parent().prev().text();
-        $("#edit-news-title-id").val(title);
-        $("#edit-news-content-id").val(content);
-
-    });
-}
 
 function hashChangeHandler() {
     console.log(window.location.hash);
@@ -79,6 +60,23 @@ function hashChangeHandler() {
             $("#content-col-profile").removeClass("not");
             break;
     }
+    if (window.location.hash.substr(0, 5) == "#edit") {
+        var news_id = window.location.hash.substr(6);
+        $(".content-col").addClass("not");
+        $("#content-col-insert").removeClass("not");
+
+        // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
+        var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
+        $("#edit-news-form-id").attr("action", edit_news_form_target);
+
+        var title = $("#news_" + news_id + " .news-title").first().text();
+        var content = $("#news_" + news_id + " .news-content").first().text();
+        // kysime pealkirja ja sisu v22rtused ning t2idame need
+        //var title = $(this).parent().prevUntil(".news-title").last().prev().text();
+        //var content = $(this).parent().prev().text();
+        $("#edit-news-title-id").val(title);
+        $("#edit-news-content-id").val(content);
+    }
 }
 
 $(document).ready(function(){
@@ -88,8 +86,6 @@ $(document).ready(function(){
 
     // see on ikka p2ris lahe, et nii saab...
     window.onhashchange = hashChangeHandler;
-
-    addEditButtonListener();
 
 
     var current_page = 1;
@@ -102,7 +98,6 @@ $(document).ready(function(){
             if( ($(window).scrollTop() + $(window).height() >= $(document).height()  ) && (current_page < total_nbr_of_pages) ) {
                 $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
                     $("#content-col-seenews").append(data);
-                    addEditButtonListener();
                     current_page++;
                     // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
                     if (current_page < total_nbr_of_pages) {
@@ -118,7 +113,6 @@ $(document).ready(function(){
     $("#load_more_news_button").click(function() {
         $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
             $("#content-col-seenews").append(data);
-            addEditButtonListener();
             current_page++;
             // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
             if (current_page < total_nbr_of_pages) {
