@@ -2,6 +2,7 @@
 function loadContent(url){
     $.get("/content.php", {cid: url}, function(data) {
         $("#content-col-grupid").html(data);
+        history.pushState(data, 'New URL: '+url, url);
     });
 }
 
@@ -13,15 +14,16 @@ $(document).ready(function(){
 
         loadContent(href);
 
-        var content = $("#content-col-grupid").html();
-        history.pushState(content, 'New URL: '+href, href);
-
     });
 
     // back and forward buttons
     window.onpopstate = function(event) {
         console.log("pathname: " + location.href);
-        $("#content-col-grupid").html(event.state);
+        if (event.state) {
+            $("#content-col-grupid").html(event.state);
+        } else {
+            location.href = "/grupid.php";
+        }
 
     };
 
