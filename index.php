@@ -13,7 +13,11 @@ $news_statistics = getNbrOfNewsByUsers();
 
 $loggedin = isUserLoggedIn();
 
-$loggedInUserEmail = getLoggedInUserEmail();
+$loggedInUserEmail = 0;
+if($loggedin){
+    $loggedInUserEmail = getLoggedInUserEmail();
+}
+
 
 include('templates/index_template.php');
 

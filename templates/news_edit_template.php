@@ -32,6 +32,9 @@
     </p>
 
     <br>
+
     <input type="submit" name="edit-submit-news">
+
+
 
 </form>
