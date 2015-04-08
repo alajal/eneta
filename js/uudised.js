@@ -71,17 +71,22 @@ function hashChangeHandler() {
         $(".content-col").addClass("not");
         $("#content-col-insert").removeClass("not");
 
-        // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
-        var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
-        $("#edit-news-form-id").attr("action", edit_news_form_target);
+        $.get("/templates/news_edit_template.php", function(data) {
+            $("#content-col-insert").html(data);
+            if ($("#edit-news-form-id").length > 0) {
+                // kysime news_id v22rtuse ning muudame form'i action atribuudi sobivaks
+                var edit_news_form_target = "mysql-tasklist/news/updateNewsInDB.php?id=" + news_id;
+                $("#edit-news-form-id").attr("action", edit_news_form_target);
 
-        var title = $("#news_" + news_id + " .news-title").first().text();
-        var content = $("#news_" + news_id + " .news-content").first().text();
-        // kysime pealkirja ja sisu v22rtused ning t2idame need
-        //var title = $(this).parent().prevUntil(".news-title").last().prev().text();
-        //var content = $(this).parent().prev().text();
-        $("#edit-news-title-id").val(title);
-        $("#edit-news-content-id").val(content);
+                var title = $("#news_" + news_id + " .news-title").first().text();
+                var content = $("#news_" + news_id + " .news-content").first().text();
+                // kysime pealkirja ja sisu v22rtused ning t2idame need
+                //var title = $(this).parent().prevUntil(".news-title").last().prev().text();
+                //var content = $(this).parent().prev().text();
+                $("#edit-news-title-id").val(title);
+                $("#edit-news-content-id").val(content);
+            }
+        });
     }
 }
 
