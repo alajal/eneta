@@ -1,6 +1,7 @@
 <?php
 
 include_once (__DIR__."/../../config.php");
+include_once (__DIR__."/../../session.php");
 
 function connectToDatabase()
 {
@@ -134,11 +135,16 @@ function getNewsHtml($messages) {
                 <h3 class='news-title'>{$message["title"]}</h3>
                 <p class='news-author'>Autor: {$message["firstname"]} {$message["lastname"]}</p>
                 <p class='news-content'>{$message["content"]}</p>
+                ";
+            if (isUserLoggedIn()) {
+                $data .= "
                 <p class='news-mod-link'>
                     <a href='mysql-tasklist/news/deleteNewsFromDB.php?id={$message["id"]}'>Kustuta</a>
                     <span> | </span>
                     <a href='#edit_{$message["id"]}' class='edit_news_button'>Muuda</a>
-                </p>
+                </p>";
+            }
+        $data .= "
             </div>
             ";
     }
