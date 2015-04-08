@@ -47,9 +47,15 @@ function hashChangeHandler() {
         case "#sisestauudis":
             $(".content-col").addClass("not");
             $("#content-col-insert").removeClass("not");
-            var input_news_form_target = "mysql-tasklist/news/addNewsToDB.php";
-            $("#edit-news-form-id").attr("action", input_news_form_target);
-            $("#edit-news-form-id")[0].reset();
+
+            $.get("/templates/news_edit_template.php", function(data) {
+                $("#content-col-insert").html(data);
+                if ($("#edit-news-form-id").length > 0) {
+                    var input_news_form_target = "mysql-tasklist/news/addNewsToDB.php";
+                    $("#edit-news-form-id").attr("action", input_news_form_target);
+                    $("#edit-news-form-id")[0].reset();
+                }
+            });
             break;
         case "#statistika":
             $(".content-col").addClass("not");

@@ -46,7 +46,7 @@ include('header_template.php');
     <div id="content-col-insert" class="not content-col">
         <!-- uudiste sisestamine -->
         <?php
-            include('news_edit_template.php');
+            //include('news_edit_template.php');
             //include('../accessToken.php');
         ?>
     </div>
