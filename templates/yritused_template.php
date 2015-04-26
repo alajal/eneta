@@ -13,12 +13,9 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-
 <?php
 include('header_template.php')
 ?>
-
-
 <div id="content">
     <div id="left-sidebar">
         <ul>
@@ -28,21 +25,11 @@ include('header_template.php')
     </div>
 
     <div class="content-col">
-
         <p>Sisu</p>
-
     </div>
-
 </div>
-
 <?php
 include('footer_template.html')
 ?>
-
 </body>
 </html>
-
-<!--
-// /etc/init.d/apache2 start
-// /etc/apache2 on konf ls-l-->
-

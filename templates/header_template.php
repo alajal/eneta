@@ -17,7 +17,6 @@
    </nav>
 
    <nav class="bottom">
-       <!--div class="menu-wrapper"-->
         <ul class="menu">
             <li class="uudised">
                 <a href="/index.php">Uudised</a>
@@ -39,7 +38,6 @@
                 <a href="/blogi.php">Blogi</a>
             </li>
         </ul>
-        <!--/div-->
     </nav>
 
 </header>

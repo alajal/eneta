@@ -6,12 +6,8 @@ function loadContent(url){
 
 function getNewNews(last_news_time) {
     var query_string = {'timestamp' : last_news_time};
-
-    $.post( "mysql-tasklist/news/reverseAjaxNews.php",
-        query_string,
-        function (data) {
+    $.post( "mysql-tasklist/news/reverseAjaxNews.php", query_string, function (data) {
             var obj = $.parseJSON(data);
-
             $("#content-col-seenews").prepend(obj.sisu);
             getNewNews(obj.timestamp);
         });
@@ -91,14 +87,10 @@ function hashChangeHandler() {
 }
 
 $(document).ready(function(){
-
     // esmalt kontrollime otselinki
     hashChangeHandler();
-
     // see on ikka p2ris lahe, et nii saab...
     window.onhashchange = hashChangeHandler;
-
-
     var current_page = 1;
     // var total_nbr_of_pages = document.getElementById("nbr_of_total_news_pages").textContent;
     var total_nbr_of_pages = $("#nbr_of_total_news_pages").text();

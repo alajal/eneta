@@ -11,14 +11,11 @@
     <script src="js/jquery-2.1.3.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
     <script src="js/main.js"></script>
-
 </head>
 <body>
-
 <?php
 include('header_template.php')
 ?>
-
 <div id="content">
     <div id="left-sidebar">
         <ul>
@@ -26,19 +23,13 @@ include('header_template.php')
             <li><a href="#">Ajakirjad</a> </li>
         </ul>
     </div>
-
     <div class="content-col">
-
         <p>Sisu</p>
-
     </div>
-
 </div>
-
 <?php
 include('footer_template.html')
 ?>
-
 </body>
 </html>
 

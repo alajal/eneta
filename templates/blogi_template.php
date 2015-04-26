@@ -40,7 +40,3 @@ include('footer_template.html')
 
 </body>
 </html>
-
-<!--
-// /etc/init.d/apache2 start
-// /etc/apache2 on konf ls-l-->

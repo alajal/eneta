@@ -12,14 +12,11 @@
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
     <script src="js/main.js"></script>
     <script src="js/uudised.js"></script>
-
 </head>
 <body>
-
 <?php
 include('header_template.php');
 ?>
-
 <div id="content">
 
         <div id="left-sidebar">
@@ -32,17 +29,13 @@ include('header_template.php');
                 <?php } ?>
             </ul>
         </div>
-
-
     <div id="content-col-seenews" class="content-col">
-
         <!-- uudiste kuvamine -->
         <?php
             include('news_show_template.php');
         ?>
         <button id="load_more_news_button">Lae veel uudiseid</button>
     </div>
-
     <div id="content-col-insert" class="not content-col">
         <!-- uudiste sisestamine -->
         <?php
@@ -50,14 +43,12 @@ include('header_template.php');
             //include('../accessToken.php');
         ?>
     </div>
-
     <div id="content-col-statistics" class="not content-col">
         <!-- statistika kuvamine -->
         <?php
         include('news_statistics_template.php');
         ?>
     </div>
-
     <div id="content-col-profile" class="not content-col">
         <?php
         include('profile_template.php');
@@ -65,21 +56,14 @@ include('header_template.php');
 
     </div>
 </div>
-
 <?php
 include('footer_template.html');
 ?>
-
 <!-- et saaks JS kasutada, kergem kui ajaxit teha veel -->
 <div id="nbr_of_total_news_pages" class="not">
     <?php
     echo htmlspecialchars($nbr_of_pages);
     ?>
 </div>
-
 </body>
 </html>
-
-<!--
-// /etc/init.d/apache2 start
-// /etc/apache2 on konf ls-l-->
