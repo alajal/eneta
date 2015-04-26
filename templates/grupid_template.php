@@ -8,10 +8,10 @@
     <title>Eneta</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/jquery-2.1.3.js" async></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
-    <script src="js/main.js"></script>
-    <script src="/js/grupid.js"></script>
+    <script src="js/main.js" async></script>
+    <script src="/js/grupid.js" async></script>
 </head>
 <body>
 
