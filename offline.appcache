@@ -1,2 +1,11 @@
 CACHE MANIFEST
-*
+
+/css/style.css
+
+/js/jquery-2.1.3.js
+/js/main.js
+/js/uudised.js
+/js/grupid.js
+
+/index.php
+/blogi,php
