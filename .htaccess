@@ -13,3 +13,5 @@
   Header append Vary User-Agent env=!dont-vary
  </IfModule>
 </IfModule>
+
+AddType text/cache-manifest .appcache
