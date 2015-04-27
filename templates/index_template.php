@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="offline.manifest">
+<html>
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="google-signin-clientid" content="236342773769-k9q08n7gkh1lpse03vorof5mp2r2t4k6.apps.googleusercontent.com" />

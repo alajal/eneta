@@ -14,5 +14,4 @@
  </IfModule>
 </IfModule>
 
-AddType text/cache-manifest .appcache
 AddType text/cache-manifest .manifest
