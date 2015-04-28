@@ -1,4 +1,7 @@
 <?php
+
+ini_set('zlib.output_compression', 'On');
+
 include('session.php');
 date_default_timezone_set("Europe/Tallinn");
 
