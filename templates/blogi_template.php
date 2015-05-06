@@ -22,8 +22,15 @@ include('header_template.php')
 <div id="content">
     <div id="left-sidebar">
         <ul>
-            <li><a href="#">blogi 1</a> </li>
-            <li><a href="#">blogi 2</a> </li>
+
+        <?php
+        include "../mysql-tasklist/news/functions.php";
+        $blogs = getBlognames();
+        foreach ($blogs as $blog) {
+            echo "<li><a href='#'>{$blog["blogname"]}</a> </li>";
+        }
+        ?>
+            
         </ul>
     </div>
 

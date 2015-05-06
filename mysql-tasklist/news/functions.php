@@ -151,5 +151,24 @@ function getNewsHtml($messages) {
     return $data;
 }
 
+function getBlognames()
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT blogname, username FROM blog ORDER BY blogname";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
+function addBlog($user, $name)
+{
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO blog (username, blogname) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $user);
+    $stmt->bindValue(2, $name);
+    $stmt->execute();
+}
+
+
 ?>
 
