@@ -9,5 +9,5 @@ if(isUserLoggedIn()){   //kontroll - ainult sisselogitud kasutaja saab uudiseid 
     addBlog($blog_user, $blog_name);
 }
 
-//header('Location: ../../index.php');
+header('Location: ../../index.php');
 ?>
