@@ -13,6 +13,7 @@ function connectToDatabase()
     try{
         $conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //$conn = null; siin peaks toimuma andmebaasi kinnipanemine
     }
     catch(Exception $e){
         die(print_r($e));
@@ -114,6 +115,7 @@ function getTotalNbrOfNews()
     $sql = "SELECT COUNT(*) arv FROM news";
     $stmt = $conn->query($sql);
     return $stmt->fetch()["arv"];
+
 }
 
 function getUsersAndNewsAfterDate($datetime)

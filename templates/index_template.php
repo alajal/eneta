@@ -21,7 +21,7 @@ include('header_template.php');
 
         <div id="left-sidebar">
             <ul>
-                <li><a href="#uudised" id="show-news">Kuva uudised</a> </li>
+                <li><a href="#uudised" id="show-news">Kuva uudised</a></li>
                 <li><a href="#statistika" id="show-news-statistics">Uudiste statistika</a> </li>
                 <?php if($loggedin) { ?>
                         <li><a href="#sisestauudis" id="show-news-input" >Sisesta uudised</a> </li>

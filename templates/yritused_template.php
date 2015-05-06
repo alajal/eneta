@@ -11,25 +11,44 @@
     <script src="js/jquery-2.1.3.js"</script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
     <script src="js/main.js"></script>
+    <script src="js/yritused.js"></script>
 </head>
 <body>
+
 <?php
 include('header_template.php')
 ?>
+
 <div id="content">
+
     <div id="left-sidebar">
         <ul>
-            <li><a href="#">Kuva yritused</a> </li>
-            <li><a href="#">Sisesta uus üritus</a> </li>
+            <li><a id="show-events" href="#yritused">Vaata üritusi</a></li>
+            <?php if($loggedin) { ?>
+                <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
+            <?php } ?>
         </ul>
     </div>
 
-    <div class="content-col">
-        <p>Sisu</p>
+    <div id="content-col-yritused" class="content-col">
+        <!--Yrituste kuvamine -->
+        <?php
+            include('events_show_template.php');
+        ?>
     </div>
+
+    <div id="sisesta-yritusi" class="not content-col">
+        <!--Yrituste sisestamine -->
+        <?php
+            //include('events_insert_template.php');
+        ?>
+    </div>
+
 </div>
+
 <?php
 include('footer_template.html')
 ?>
+
 </body>
 </html>
