@@ -1,6 +1,6 @@
 <?php
 
-include ("../news/functions.php");
+include (__DIR__."../news/functions.php");
 //include ("../../session.php");
 
 
