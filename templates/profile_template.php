@@ -1,9 +1,6 @@
 <h3>Profiil</h3>
 <?php $username = getLoggedInUserEmail();
 echo "username: $username";
-echo $username;
-$bla = $_SESSION['googleuserid'];
-echo $bla;
 ?>
 
 <form action='mysql-tasklist/blog/addBlogToDB.php' method='post' id='add-blog-form-id'>

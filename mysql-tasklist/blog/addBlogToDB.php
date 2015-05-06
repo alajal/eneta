@@ -1,7 +1,8 @@
 <?php
 
-include_once ("/mysql-tasklist/news/functions.php");
-include_once ("/session.php");
+include ("../news/functions.php");
+//include ("../../session.php");
+
 
 if(isUserLoggedIn()){   //kontroll - ainult sisselogitud kasutaja saab uudiseid lisada
     $blog_user = getLoggedInUserEmail();
