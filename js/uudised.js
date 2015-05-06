@@ -1,8 +1,8 @@
-function loadContent(url){
-    $.get("/content.php", {cid: url}, function(data) {
-        $("#content-col-uudised").html(data);
-    });
-}
+//function loadContent(url){
+//    $.get("/content.php", {cid: url}, function(data) {
+//        $("#content-col-uudised").html(data);
+//    });
+//}
 
 function getNewNews(last_news_time) {
     var query_string = {'timestamp' : last_news_time};
