@@ -6,7 +6,7 @@ $bla = $_SESSION['googleuserid'];
 echo $bla;
 ?>
 
-<form action='/mysql-tasklist/blog/addBlogToDB.php' method='post' id='add-blog-form-id'>
+<form action='mysql-tasklist/blog/addBlogToDB.php' method='post' id='add-blog-form-id'>
     <label for='blog-name-id'>Blogi nimi: </label>
     <input type='text' name='blog-name' id='blog-name-id' maxlength='45'>
 
