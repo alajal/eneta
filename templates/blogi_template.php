@@ -24,7 +24,7 @@ include('header_template.php')
         <ul>
 
         <?php
-        include "../mysql-tasklist/news/functions.php";
+        include "/mysql-tasklist/news/functions.php";
         $blogs = getBlognames();
         foreach ($blogs as $blog) {
             echo "<li><a href='#'>{$blog["blogname"]}</a> </li>";
