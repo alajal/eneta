@@ -30,7 +30,7 @@ include('header_template.php')
             echo "<li><a href='#'>{$blog["blogname"]}</a> </li>";
         }
         ?>
-            
+
         </ul>
     </div>
 

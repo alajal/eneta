@@ -1,5 +1,7 @@
 <h3>Profiil</h3>
-<?php $username = getLoggedInUserEmail(); ?>
+<?php $username = getLoggedInUserEmail();
+echo "username: $username";
+?>
 
 <form action='/mysql-tasklist/blog/addBlogToDB.php' method='post' id='edit-news-form-id'>
     <label for='blogname-input'>Blogi nimi: </label>
