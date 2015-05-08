@@ -10,11 +10,12 @@ echo $username;
     <input type='submit' name='add-blog-submit''>
 
     <br>
-
-    <?php
-    include("blog_edit_template.php");
-    ?>
-
 </form>
+
+<?php
+include("blog_edit_template.php");
+?>
+
+
 
 
