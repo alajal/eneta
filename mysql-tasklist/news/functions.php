@@ -161,6 +161,14 @@ function getBlognames()
     return $stmt->fetchAll();
 }
 
+function getBlognamesByUser($user)
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT blogname FROM blog WHERE username = $user ORDER BY blogname";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
 function addBlog($user, $name)
 {
     $conn = connectToDatabase();
@@ -168,6 +176,17 @@ function addBlog($user, $name)
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $user);
     $stmt->bindValue(2, $name);
+    $stmt->execute();
+}
+
+function addBlogEntry($blogname, $content, $date)
+{
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO blogentry (blogname, blogdate, blogcontent) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $blogname);
+    $stmt->bindValue(2, $date);
+    $stmt->bindValue(3, $content);
     $stmt->execute();
 }
 
