@@ -192,6 +192,26 @@ function addBlogEntry($name, $date, $content)
 
 }
 
+function getBlogEntriesByName($name)
+{
+    $conn = connectToDatabase();
+    $name = $conn->quote($name);
+    $sql = "SELECT idblogentry, blogname, blogdate, blogcontent FROM blogentry WHERE blogname = $name ORDER BY blogdate DESC";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
+function getBlogEntryHtml($blogentries) {
+    $data = "";
+    foreach($blogentries as $blogentry) {
+        $data .= "
+            <div class='blog-entry' id='blog_{$blogentry["idblogentry"]}'>
+                <p class='blog-entry-date'>Kuup&#228ev: {$blogentry["blogdate"]}</p>
+                <p class='blog-entry-content'>{$blogentry["blogcontent"]}</p>
+            </div>";
+    }
+    return $data;
+}
 
 ?>
 

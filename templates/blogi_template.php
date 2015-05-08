@@ -11,6 +11,7 @@
     <script src="js/jquery-2.1.3.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
     <script src="js/main.js"></script>
+    <script src="js/blogi.js"></script>
 </head>
 <body>
 
@@ -27,14 +28,14 @@ include('header_template.php')
         include "/mysql-tasklist/news/functions.php";
         $blogs = getBlognames();
         foreach ($blogs as $blog) {
-            echo "<li><a href='#'>{$blog["blogname"]}</a> </li>";
+            echo "<li><a href='#{$blog["blogname"]}'>{$blog["blogname"]}</a> </li>";
         }
         ?>
 
         </ul>
     </div>
 
-    <div class="content-col">
+    <div class="content-col" id="content-col-blogi">
 
         <p>Sisu</p>
 
