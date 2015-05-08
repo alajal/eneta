@@ -175,7 +175,7 @@ function addBlog($user, $name)
     $conn = connectToDatabase();
     $sql = "INSERT INTO blog (username, blogname) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bindValue(1, $conn->quote($user));
+    $stmt->bindValue(1, $user);
     $stmt->bindValue(2, $name);
     $stmt->execute();
 }
