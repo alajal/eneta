@@ -13,5 +13,5 @@ function getLoggedInUserEmail(){
         session_start();
     }
 
-    return mysql_real_escape_string($_SESSION['email']);
+    return $_SESSION['email'];
 }
