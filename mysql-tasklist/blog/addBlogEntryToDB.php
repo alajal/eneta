@@ -8,14 +8,8 @@ if(isUserLoggedIn()){   //kontroll - ainult sisselogitud kasutaja saab lisada
     date_default_timezone_set("Europe/Tallinn");
     $blog_entry_date = date("Y-m-d H:i:s");
 
-    echo $blog_name;
-    echo "<br>";
-    echo $blog_entry_content;
-    echo "<br>";
-    echo $blog_entry_date;
-
-    addBlogEntry($blog_name, $blog_entry_content, $blog_entry_date);
+    addBlogEntry($blog_name, $blog_entry_date, $blog_entry_content);
 }
 
-//header('Location: ../../index.php');
+header('Location: ../../index.php');
 ?>
