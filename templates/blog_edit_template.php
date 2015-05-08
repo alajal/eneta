@@ -2,7 +2,7 @@
 //include_once ("../mysql-tasklist/news/functions.php");
 if(isUserLoggedIn()) {
     echo "
-<form action='mysql-tasklist/blog/addBlogEntryToDB' method='post' id='blog-entry-form-id'>
+<form action='mysql-tasklist/blog/addBlogEntryToDB.php' method='post' id='blog-entry-form-id'>
     <p>
         <label for='blog-entry-name-id'>Vali blogi: </label>
 
