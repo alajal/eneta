@@ -9,10 +9,10 @@ if(isUserLoggedIn()) {
         <select name='blog-entry-name' id='blog-entry-name-id'>
 ";
     $user = getLoggedInUserEmail();
-    $blogs = getBlognamesByUser($user);
+    $blogs = getBlognamesByUser("$user");
     if(count($blogs) > 0) {
         foreach($blogs as $blog) {
-            echo "<option value='".$blog["blogname"]."'>".$blog["blogname"]."</option>";
+            echo "<option value='{$blog["blogname"]}'>{$blog["blogname"]}</option>";
         }
     } else {
         echo "<p>Blogid puuduvad. Lisa esmalt uus blogi.</p>";
