@@ -180,12 +180,12 @@ function addBlog($user, $name)
     $stmt->execute();
 }
 
-function addBlogEntry($blogname, $content, $date)
+function addBlogEntry($name, $content, $date)
 {
     $conn = connectToDatabase();
     $sql = "INSERT INTO blogentry (blogname, blogdate, blogcontent) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bindValue(1, $blogname);
+    $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $date);
     $stmt->bindValue(3, $content);
     $stmt->execute();
