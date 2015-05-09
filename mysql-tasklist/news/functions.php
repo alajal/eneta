@@ -13,28 +13,27 @@ function connectToDatabase()
     try{
         $conn = new PDO("mysql:host=$config_db_host;dbname=$config_db_name", $config_db_user, $config_db_pwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //$conn = null; siin peaks toimuma andmebaasi kinnipanemine
     }
     catch(Exception $e){
         die(print_r($e));
     }
     return $conn;
 }
-/*
-function markItemComplete($item_id)
-{
-    $conn = connect();
-    $sql = "UPDATE items SET is_complete = 1 WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindValue(1, $item_id);
-    $stmt->execute();
-}
-*/
 
 function getNews()
 {
     $conn = connectToDatabase();
     $sql = "SELECT * FROM news ORDER BY datetime DESC";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetchAll();
+    $conn = NULL;
+    return $result;
+}
+
+function getEvents()
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT * FROM events ORDER BY addingTime DESC";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll();
 }
@@ -51,6 +50,20 @@ function addNews($user, $title, $content, $date)
     $stmt->execute();
 }
 
+function addEvents($author, $title, $content, $location, $addingTime, $eventTime)
+{
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO events (author, title, content, location, addingTime, eventTime) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $author);
+    $stmt->bindValue(2, $title);
+    $stmt->bindValue(3, $content);
+    $stmt->bindValue(4, $location);
+    $stmt->bindValue(5, $addingTime);
+    $stmt->bindValue(6, $eventTime);
+    $stmt->execute();
+}
+
 function updateNews($id, $user, $title, $content, $date)
 {
     $conn = connectToDatabase();
@@ -64,12 +77,37 @@ function updateNews($id, $user, $title, $content, $date)
     $stmt->execute();
 }
 
+function updateEvents($id, $author, $title, $content, $location, $addingTime, $eventTime)
+{
+    $conn = connectToDatabase();
+    $sql = "UPDATE events SET events.author=?, title=?, content=?, location=?, addingTime=?, eventTime=? WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $author);
+    $stmt->bindValue(2, $title);
+    $stmt->bindValue(3, $content);
+    $stmt->bindValue(4, $location);
+    $stmt->bindValue(5, $addingTime);
+    $stmt->bindValue(6, $eventTime);
+    $stmt->bindValue(7, $id);
+    $stmt->execute();
+
+}
+
 function deleteNews($news_id)
 {
     $conn = connectToDatabase();
     $sql = "DELETE FROM news WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $news_id);
+    $stmt->execute();
+}
+
+function deleteEvents($event_id)
+{
+    $conn = connectToDatabase();
+    $sql = "DELETE FROM events WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $event_id);
     $stmt->execute();
 }
 
@@ -81,6 +119,16 @@ function getUsersAndNews($start_row, $nbr_of_rows)
             order by news.datetime DESC LIMIT $start_row, $nbr_of_rows";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll(); //Returns an array containing all of the result set rows
+}
+
+function getUsersAndEvents($start_row, $nbr_of_rows)
+{
+    $_conn = connectToDatabase();
+    $sql = "select users.mail, users.firstname, users.lastname, events.id, events.title, events.content, events.location, events.addingTime, events.eventTime
+            from events inner join users on events.author=users.mail
+            order by events.addingTime desc LIMIT $start_row, $nbr_of_rows";
+    $stmt = $_conn->query($sql);
+    return $stmt->fetchAll();
 }
 
 function getUsersAndNewsById($id)
@@ -118,6 +166,16 @@ function getTotalNbrOfNews()
 
 }
 
+function getTotalNbrOfEvents()
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT COUNT(*) arv FROM events";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch()["arv"];
+    $conn = NULL;
+    return $result;
+}
+
 function getUsersAndNewsAfterDate($datetime)
 {
     $conn = connectToDatabase();
@@ -149,6 +207,31 @@ function getNewsHtml($messages) {
         $data .= "
             </div>
             ";
+    }
+    return $data;
+}
+
+function getEventsToShow($usersAndEvents)
+{
+    $data = '';
+    foreach($usersAndEvents as $event) {
+        $data .= "
+            <div class='events-story' id='events_{$event["id"]}'>
+                <h4 class='events-title'>{$event["title"]}</h4>
+                <p class='events-location'>Asukoht: {$event["location"]}</p>
+                <p class='events-time'>Toimumisaeg: {$event["eventTime"]}</p>
+                <p class='events-content'>{$event["content"]}</p>
+            ";
+            if(isUserLoggedIn()){
+                $data .= "
+                    <p class='events-mod-link'>
+                        <a href='mysql-tasklist/events/deleteEventsFromDB.php?id={$event["id"]}'>Kustuta üritus</a>
+                        <span> | </span>
+                        <a href='#edit_{$event["id"]}' class='edit_events_button'>Muuda üritust</a>
+                     </p>";
+            }
+        $data .= "
+            </div>";
     }
     return $data;
 }
