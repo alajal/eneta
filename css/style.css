@@ -10,8 +10,12 @@
 
 body {
     max-width: 960px;
+    margin: 0;
     margin-right: auto;
     margin-left: auto;
+    /*font-size: 14px;*/
+    line-height: 1.42857143;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     padding: 5px;
     background-color: ghostwhite;
 }
@@ -66,6 +70,8 @@ body {
     width: 64px;
     height: 64px;
     float: left;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
 }
 
 footer {
@@ -118,6 +124,8 @@ footer {
 .news-author {
     color: #1a171b;
     font-size: 0.8em;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
 }
 
 .news-mod-link * {
@@ -164,7 +172,7 @@ nav.top {
     width: 150px;
     height: 50px;
     /*border: 1px solid #ffffff;*/
-    margin: 1.2rem;
+    margin: 1rem;
     padding: 0.5rem;
     float: right;
 }

@@ -126,5 +126,5 @@ $(document).ready(function(){
         });
     });
 
-    getNewNews(getCurrentTime());
+    //getNewNews(getCurrentTime());
 });

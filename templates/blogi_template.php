@@ -6,7 +6,7 @@
     <meta name="google-signin-scope" content="email profile" />
     <meta name="google-signin-cookiepolicy" content="single_host_origin" />
     <title>Eneta</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--link rel="stylesheet" href="css/bootstrap.css"-->
     <link rel="stylesheet" href="../css/style.css"/>
     <script src="js/jquery-2.1.3.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
