@@ -153,5 +153,65 @@ function getNewsHtml($messages) {
     return $data;
 }
 
+function getBlognames()
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT blogname, username FROM blog ORDER BY blogname";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
+function getBlognamesByUser($user)
+{
+    $conn = connectToDatabase();
+    $user = $conn->quote($user);
+    $sql = "SELECT blogname FROM blog WHERE username = $user ORDER BY blogname";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
+function addBlog($user, $name)
+{
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO blog (username, blogname) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $user);
+    $stmt->bindValue(2, $name);
+    $stmt->execute();
+}
+
+function addBlogEntry($name, $date, $content)
+{
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO blogentry (blogname, blogdate, blogcontent) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $name);
+    $stmt->bindValue(2, $date);
+    $stmt->bindValue(3, $content);
+    $stmt->execute();
+
+}
+
+function getBlogEntriesByName($name)
+{
+    $conn = connectToDatabase();
+    $name = $conn->quote($name);
+    $sql = "SELECT idblogentry, blogname, blogdate, blogcontent FROM blogentry WHERE blogname = $name ORDER BY blogdate DESC";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll();
+}
+
+function getBlogEntryHtml($blogentries) {
+    $data = "";
+    foreach($blogentries as $blogentry) {
+        $data .= "
+            <div class='blog-entry' id='blog_{$blogentry["idblogentry"]}'>
+                <p class='blog-entry-date'>Kuup&#228ev: {$blogentry["blogdate"]}</p>
+                <p class='blog-entry-content'>{$blogentry["blogcontent"]}</p>
+            </div>";
+    }
+    return $data;
+}
+
 ?>
 

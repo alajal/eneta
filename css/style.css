@@ -183,6 +183,16 @@ nav.top {
         width: 100%
     }
 
-
-
 }
+
+.blog-title {
+    text-align:center;
+}
+
+.blog-entry {
+    background-color: #f5f5f5;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding-left: 0.1rem;
+}
+
