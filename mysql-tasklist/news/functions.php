@@ -334,14 +334,34 @@ function getBlogEntriesByName($name)
     return $result;
 }
 
-function getBlogEntryHtml($blogentries) {
+function getBlogEntryUserById($id)
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT blog.username
+            FROM blogentry INNER JOIN blog ON blog.blogname = blogentry.blogname
+            WHERE idblogentry = $id";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch()["username"];
+    $conn = NULL;
+    return $result;
+}
+
+function getBlogEntryHtml($blogentries, $blog_user) {
     $data = "";
     foreach($blogentries as $blogentry) {
         $data .= "
             <div class='blog-entry' id='blog_{$blogentry["idblogentry"]}'>
                 <p class='blog-entry-date'>Kuup&#228ev: {$blogentry["blogdate"]}</p>
-                <p class='blog-entry-content'>{$blogentry["blogcontent"]}</p>
-            </div>";
+                <p class='blog-entry-content'>{$blogentry["blogcontent"]}</p>";
+
+        if (isUserLoggedIn() && ($blog_user == getLoggedInUserEmail())) {
+            $data .= "
+                <p class='news-mod-link'>
+                    <a href='mysql-tasklist/blog/deleteBlogEntryFromDB.php?id={$blogentry["idblogentry"]}'>Kustuta</a>
+                </p>";
+        }
+
+        $data .= "</div>";
     }
     return $data;
 }
