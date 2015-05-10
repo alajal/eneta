@@ -165,6 +165,17 @@ function getUsers()
     return $result;
 }
 
+function getUsersByUsername($user)
+{
+    $conn = connectToDatabase();
+    $user = $conn->quote($user);
+    $sql = "SELECT * FROM users WHERE mail = $user";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch();
+    $conn = NULL;
+    return $result;
+}
+
 function getNbrOfNewsByUsers()
 {
     $conn = connectToDatabase();
