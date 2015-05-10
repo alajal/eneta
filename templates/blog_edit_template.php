@@ -62,7 +62,6 @@ if(isUserLoggedIn()) {
             echo "
     </select>
     </p>
-    <br>
 
     <input type='submit' name='delete-blog-submit'>
 

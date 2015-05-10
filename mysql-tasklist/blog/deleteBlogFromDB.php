@@ -2,7 +2,7 @@
 
 include (__DIR__."/../news/functions.php");
 
-$blogname = $_GET["delete-blog-name"];
+$blogname = $_POST["delete-blog-name"];
 $blog_user = getBlogUser($blogname);
 
 if (isUserLoggedIn() && ($blog_user == getLoggedInUserEmail())) {
