@@ -289,6 +289,17 @@ function getBlognamesByUser($user)
     return $result;
 }
 
+function getBlogUser($blogname)
+{
+    $conn = connectToDatabase();
+    $blogname = $conn->quote($blogname);
+    $sql = "SELECT username FROM blog WHERE blogname = $blogname";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch()["username"];
+    $conn = NULL;
+    return $result;
+}
+
 function addBlog($user, $name)
 {
     $conn = connectToDatabase();
@@ -333,6 +344,26 @@ function getBlogEntryHtml($blogentries) {
             </div>";
     }
     return $data;
+}
+
+function deleteBlog($blogname)
+{
+    $conn = connectToDatabase();
+    $sql = "DELETE FROM blog WHERE blogname = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $blogname);
+    $stmt->execute();
+    $conn = NULL;
+}
+
+function deleteBlogEntry($blogentry_id)
+{
+    $conn = connectToDatabase();
+    $sql = "DELETE FROM blogentry WHERE idblogentry = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $blogentry_id);
+    $stmt->execute();
+    $conn = NULL;
 }
 
 ?>
