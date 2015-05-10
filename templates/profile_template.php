@@ -6,7 +6,7 @@ if(isUserLoggedIn()) {
     echo "
     <h3 id='profile-display-message'>Profiil</h3>
     <span id='profile-user-name' class='not'>$username</span>
-    <p>Kasutajanimi: $username<br>Nimi: $display_name
+    <p>Kasutajanimi: $username<br>Nimi: <span id='profile-display-name'>$display_name</span>
     </p>";
 
    include("blog_edit_template.php");
