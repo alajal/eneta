@@ -34,19 +34,26 @@ function hashChangeHandler() {
                 $("#edit-events-form-id").attr("action", edit_events_form_target);
                 var title = $("#events_" + events_id + " .events-title").first().text();
                 var content = $("#events_" + events_id + " .events-content").first().text();
+                //var location = $("events_" + events_id + " .events-location").first().text();
+                //var eventTime = $("events_" + eventTime + " .events-eventTime").first().text();
                 // kysime pealkirja ja sisu v22rtused ning t2idame need
                 $("#edit-events-title-id").val(title);
                 $("#edit-events-content-id").val(content);
+                //$("#edit-events-location-id").val(location);
+                //$("#edit-events-eventTime-id").val(eventTime);
             }
         });
     }
-
 }
 
-
-
 $(document).ready(function(){
+
+
     // kontrollime otselinki
     hashChangeHandler();
     window.onhashchange = hashChangeHandler;
+
+    //var obj = $("#blaaaaaaaaaaaaaa");
+    //obj.datepicker();
 });
+
