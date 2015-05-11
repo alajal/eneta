@@ -11,13 +11,6 @@ $google_first_name = $obj->{"given_name"};
 $google_family_name = $obj->{"family_name"};
 $google_full_name = $obj->{"name"};
 
-// kui kasutajat pole baasis, lisame
-if (!is_null($googleuserid)) {
-    if (!loggedInUserInDB($email)) {
-        addUser($email, $google_first_name, $google_family_name);
-    }
-}
-
 //kuna kasutaja andmed on saadaval ainult siin ja ainult siis kui tehakse POST päring, siis tuleb session teha ka siin
 session_start();
 
@@ -30,7 +23,12 @@ $_SESSION['google_family_name'] = $google_family_name;
 $_SESSION['google_full_name'] = $google_full_name;
 
 
-
+// kui kasutajat pole baasis, lisame
+if (!is_null($googleuserid)) {
+    if (!loggedInUserInDB($email)) {
+        addUser($email, $google_first_name, $google_family_name);
+    }
+}
 
 
 
