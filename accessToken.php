@@ -23,6 +23,7 @@ $_SESSION['google_family_name'] = $google_family_name;
 $_SESSION['google_full_name'] = $google_full_name;
 
 
+include "mysql-tasklist/news/functions.php";
 // kui kasutajat pole baasis, lisame
 if (!is_null($googleuserid)) {
     if (!loggedInUserInDB($email)) {
