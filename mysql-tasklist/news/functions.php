@@ -184,6 +184,17 @@ function getUsers()
     return $result;
 }
 
+function getUsersByUsername($user)
+{
+    $conn = connectToDatabase();
+    $user = $conn->quote($user);
+    $sql = "SELECT * FROM users WHERE mail = $user";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch();
+    $conn = NULL;
+    return $result;
+}
+
 function getNbrOfNewsByUsers()
 {
     $conn = connectToDatabase();
@@ -296,6 +307,17 @@ function getBlognamesByUser($user)
     return $result;
 }
 
+function getBlogUser($blogname)
+{
+    $conn = connectToDatabase();
+    $blogname = $conn->quote($blogname);
+    $sql = "SELECT username FROM blog WHERE blogname = $blogname";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch()["username"];
+    $conn = NULL;
+    return $result;
+}
+
 function addBlog($user, $name)
 {
     $conn = connectToDatabase();
@@ -330,16 +352,56 @@ function getBlogEntriesByName($name)
     return $result;
 }
 
-function getBlogEntryHtml($blogentries) {
+function getBlogEntryUserById($id)
+{
+    $conn = connectToDatabase();
+    $sql = "SELECT blog.username
+            FROM blogentry INNER JOIN blog ON blog.blogname = blogentry.blogname
+            WHERE idblogentry = $id";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetch()["username"];
+    $conn = NULL;
+    return $result;
+}
+
+function getBlogEntryHtml($blogentries, $blog_user) {
     $data = "";
     foreach($blogentries as $blogentry) {
         $data .= "
             <div class='blog-entry' id='blog_{$blogentry["idblogentry"]}'>
                 <p class='blog-entry-date'>Kuup&#228ev: {$blogentry["blogdate"]}</p>
-                <p class='blog-entry-content'>{$blogentry["blogcontent"]}</p>
-            </div>";
+                <p class='blog-entry-content'>{$blogentry["blogcontent"]}</p>";
+
+        if (isUserLoggedIn() && ($blog_user == getLoggedInUserEmail())) {
+            $data .= "
+                <p class='news-mod-link'>
+                    <a href='mysql-tasklist/blog/deleteBlogEntryFromDB.php?id={$blogentry["idblogentry"]}'>Kustuta</a>
+                </p>";
+        }
+
+        $data .= "</div>";
     }
     return $data;
+}
+
+function deleteBlog($blogname)
+{
+    $conn = connectToDatabase();
+    $sql = "DELETE FROM blog WHERE blogname = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $blogname);
+    $stmt->execute();
+    $conn = NULL;
+}
+
+function deleteBlogEntry($blogentry_id)
+{
+    $conn = connectToDatabase();
+    $sql = "DELETE FROM blogentry WHERE idblogentry = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $blogentry_id);
+    $stmt->execute();
+    $conn = NULL;
 }
 
 ?>

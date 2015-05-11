@@ -11,7 +11,8 @@ if ($blogname == "") {
     }
 }
 
+$blog_user = getBlogUser($blogname);
 $blogentries = getBlogEntriesByName($blogname);
 
 echo "<h3 class='blog-title'>$blogname</h3>";
-echo getBlogEntryHtml($blogentries);
+echo getBlogEntryHtml($blogentries, $blog_user);

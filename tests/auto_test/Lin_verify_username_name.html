@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://eneta.azurewebsites.net/" />
+<title>login_username_test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">login_username_test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://eneta.azurewebsites.net/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=show-profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//span[@id='profile-user-name']</td>
+	<td>eneta.tester@gmail.com</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//span[@id='profile-display-name']</td>
+	<td>Eneta Tester</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

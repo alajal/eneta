@@ -15,3 +15,4 @@ function getLoggedInUserEmail(){
 
     return $_SESSION['email'];
 }
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://eneta.azurewebsites.net/" />
+<title>Lin_add_news</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Lin_add_news</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://eneta.azurewebsites.net/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=show-news-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=edit-news-user-id</td>
+	<td>label=Tester</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-news-title-id</td>
+	<td>Test uudis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-news-content-id</td>
+	<td>Uudise test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=edit-submit-news</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content-col-seenews']/*[1]/h3[@class='news-title']</td>
+	<td>Test uudis</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content-col-seenews']/*[1]/p[@class='news-author']</td>
+	<td>Autor: Eneta Tester</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content-col-seenews']/*[1]/p[@class='news-content']</td>
+	<td>Uudise test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Kustuta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotText</td>
+	<td>//div[@id='content-col-seenews']/*[1]/h3[@class='news-title']</td>
+	<td>Test uudis</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
