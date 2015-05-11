@@ -7,7 +7,7 @@ echo $username;
     <label for='blog-name-id'>Blogi nimi: </label>
     <input type='text' name='blog-name' id='blog-name-id' maxlength='45'>
 
-    <input type='submit' name='add-blog-submit''>
+    <input type='submit' name='add-blog-submit'>
 
     <br>
 </form>

@@ -8,10 +8,16 @@
     <title>Eneta</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="js/jquery-2.1.3.js"</script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="js/jquery-2.1.3.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
     <script src="js/main.js"></script>
     <script src="js/yritused.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 </head>
 <body>
 
@@ -40,7 +46,7 @@ include('header_template.php')
     <div id="sisesta-yritusi" class="not content-col">
         <!--Yrituste sisestamine -->
         <?php
-            //include('events_insert_template.php');
+            include('events_edit_template.php');
         ?>
     </div>
 

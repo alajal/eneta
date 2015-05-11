@@ -20,6 +20,23 @@ function connectToDatabase()
     return $conn;
 }
 
+function loggedInUserInDB($umail)
+{
+    $conn = connectToDatabase();
+    $sql = "select users.mail from users";
+    foreach ($conn->query($sql)as $row){
+        //echo $row['mail']. "\t";
+        if($row['mail'] == $umail) {
+            $conn = NULL;
+            return true;
+        }
+    }
+
+    $conn = NULL;
+    return false;
+}
+
+
 function getNews()
 {
     $conn = connectToDatabase();
@@ -53,18 +70,19 @@ function addNews($user, $title, $content, $date)
     $conn = NULL;
 }
 
-function addEvents($author, $title, $content, $location, $addingTime, $eventTime)
+function addEvents($author, $title, $content,$addingTime)
 {
     $conn = connectToDatabase();
-    $sql = "INSERT INTO events (author, title, content, location, addingTime, eventTime) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO events (author, title, content, addingTime) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $author);
     $stmt->bindValue(2, $title);
     $stmt->bindValue(3, $content);
-    $stmt->bindValue(4, $location);
-    $stmt->bindValue(5, $addingTime);
-    $stmt->bindValue(6, $eventTime);
+    //$stmt->bindValue(4, $location);
+    $stmt->bindValue(4, $addingTime);
+    //$stmt->bindValue(6, $eventTime);
     $stmt->execute();
+    echo "addevents funktisoonis olen";
     $conn = NULL;
 }
 
@@ -82,18 +100,18 @@ function updateNews($id, $user, $title, $content, $date)
     $conn = NULL;
 }
 
-function updateEvents($id, $author, $title, $content, $location, $addingTime, $eventTime)
+function updateEvents($id, $author, $title, $content, $addingTime)
 {
     $conn = connectToDatabase();
-    $sql = "UPDATE events SET events.author=?, title=?, content=?, location=?, addingTime=?, eventTime=? WHERE id=?";
+    $sql = "UPDATE events SET events.author=?, title=?, content=?, addingTime=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $author);
     $stmt->bindValue(2, $title);
     $stmt->bindValue(3, $content);
-    $stmt->bindValue(4, $location);
-    $stmt->bindValue(5, $addingTime);
-    $stmt->bindValue(6, $eventTime);
-    $stmt->bindValue(7, $id);
+    //$stmt->bindValue(4, $location);
+    $stmt->bindValue(4, $addingTime);
+   // $stmt->bindValue(6, $eventTime);
+    $stmt->bindValue(5, $id);
     $stmt->execute();
     $conn = NULL;
 
@@ -134,12 +152,13 @@ function getUsersAndNews($start_row, $nbr_of_rows)
 function getUsersAndEvents($start_row, $nbr_of_rows)
 {
     $_conn = connectToDatabase();
-    $sql = "select users.mail, users.firstname, users.lastname, events.id, events.title, events.content, events.location, events.addingTime, events.eventTime
+    $sql = "select users.mail, users.firstname, users.lastname, events.id, events.title, events.content, events.addingTime
             from events inner join users on events.author=users.mail
-            order by events.addingTime desc LIMIT $start_row, $nbr_of_rows";
+            order by events.addingTime DESC";
     $stmt = $_conn->query($sql);
     $result = $stmt->fetchAll();
     $conn = NULL;
+    //echo "olen funktsioonis getusersandevents";
     return $result;
 }
 
@@ -239,8 +258,6 @@ function getEventsToShow($usersAndEvents)
         $data .= "
             <div class='events-story' id='events_{$event["id"]}'>
                 <h4 class='events-title'>{$event["title"]}</h4>
-                <p class='events-location'>Asukoht: {$event["location"]}</p>
-                <p class='events-time'>Toimumisaeg: {$event["eventTime"]}</p>
                 <p class='events-content'>{$event["content"]}</p>
             ";
             if(isUserLoggedIn()){
@@ -254,6 +271,7 @@ function getEventsToShow($usersAndEvents)
         $data .= "
             </div>";
     }
+    //echo "olen funktsioonis geteventstoshow";
     return $data;
 }
 
