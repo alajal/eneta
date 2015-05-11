@@ -126,5 +126,9 @@ $(document).ready(function(){
         });
     });
 
+    $("#profile-edit-name-enable").click(function() {
+       $("#update-user-form-id").toggleClass("not");
+    });
+
     getNewNews(getCurrentTime());
 });
