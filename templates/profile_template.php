@@ -15,7 +15,7 @@ if(isUserLoggedIn()) {
         <label for='update-user-last-name-id'>Perenimi: </label>
         <input type='text' name='update-user-last-name' id='update-user-last-name-id' maxlength='45'>
 
-        <input type='submit' name='add-blog-submit'>
+        <input type='submit' name='update-user-submit'>
         <br>
     </form>
     ";

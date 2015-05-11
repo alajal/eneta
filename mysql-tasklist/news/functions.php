@@ -101,7 +101,7 @@ function addEvents($author, $title, $content,$addingTime)
 function updateUser($email, $first_name, $last_name)
 {
     $conn = connectToDatabase();
-    $email = $conn->quote($email);
+    //$email = $conn->quote($email);
     $sql = "UPDATE users SET firstname=?, lastname=? WHERE mail=?";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $first_name);
