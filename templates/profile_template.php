@@ -10,7 +10,6 @@ if(isUserLoggedIn()) {
     <p>Kasutajanimi: $username<br>Nimi: <span id='profile-display-name'>$display_name</span>
     <button id='profile-edit-name-enable'>Muuda nimi</button>
     </p>
-    <span id='profile-user-full-name'>$google_full_name</span>
     <form action='mysql-tasklist/news/updateUserInDB.php' method='post' id='update-user-form-id' class='not'>
         <label for='update-user-first-name-id'>Eesnimi: </label>
         <input type='text' name='update-user-first-name' id='update-user-first-name-id' maxlength='45'>
