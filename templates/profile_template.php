@@ -7,9 +7,9 @@ if(isUserLoggedIn()) {
     <h3 id='profile-display-message'>Profiil</h3>
     <span id='profile-user-name' class='not'>$username</span>
     <p>Kasutajanimi: $username<br>Nimi: <span id='profile-display-name'>$display_name</span>
-    <button id='profile-edit-name-enable'></button>
+    <button id='profile-edit-name-enable'>Muuda nimi</button>
     </p>
-    <form action='mysql-tasklist/news/updateUserIn.php' method='post' id='update-user-form-id' class='not'>
+    <form action='mysql-tasklist/news/updateUserInDB.php' method='post' id='update-user-form-id' class='not'>
         <label for='update-user-first-name-id'>Eesnimi: </label>
         <input type='text' name='update-user-first-name' id='update-user-first-name-id' maxlength='45'>
         <label for='update-user-last-name-id'>Perenimi: </label>
