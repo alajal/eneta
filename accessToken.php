@@ -7,6 +7,9 @@ $andmed = file_get_contents($url);
 $obj = json_decode($andmed);
 $email = $obj->{"email"};
 $googleuserid = $obj->{"user_id"};
+$google_first_name = $obj->{"given_name"};
+$google_family_name = $obj->{"family_name"};
+$google_full_name = $obj->{"name"};
 
 //kuna kasutaja andmed on saadaval ainult siin ja ainult siis kui tehakse POST päring, siis tuleb session teha ka siin
 session_start();
@@ -15,6 +18,9 @@ session_start();
 //sessionisse salvestan kasutaja emaili jms (või cookisse või andmebaasi on teised võimalusd)
 $_SESSION['googleuserid'] = $googleuserid;
 $_SESSION['email'] = $email;
+$_SESSION['google_first_name'] = $google_first_name;
+$_SESSION['google_family_name'] = $google_family_name;
+$_SESSION['google_full_name'] = $google_full_name;
 
 
 
