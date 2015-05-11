@@ -57,6 +57,18 @@ function getEvents()
     return $result;
 }
 
+function addUser($email, $first_name, $last_name)
+{
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO users (mail, firstname, lastname) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $email);
+    $stmt->bindValue(2, $first_name);
+    $stmt->bindValue(3, $last_name);
+    $stmt->execute();
+    $conn = NULL;
+}
+
 function addNews($user, $title, $content, $date)
 {
     $conn = connectToDatabase();
@@ -83,6 +95,19 @@ function addEvents($author, $title, $content,$addingTime)
     //$stmt->bindValue(6, $eventTime);
     $stmt->execute();
     echo "addevents funktisoonis olen";
+    $conn = NULL;
+}
+
+function updateUser($email, $first_name, $last_name)
+{
+    $conn = connectToDatabase();
+    $email = $conn->quote($email);
+    $sql = "UPDATE users SET firstname=?, lastname=? WHERE mail=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $first_name);
+    $stmt->bindValue(2, $last_name);
+    $stmt->bindValue(3, $email);
+    $stmt->execute();
     $conn = NULL;
 }
 
