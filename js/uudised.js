@@ -134,5 +134,21 @@ $(document).ready(function(){
        $("#update-user-form-id").toggleClass("not");
     });
 
+    $(".update_user_btn").click(function(){
+        var user_name = $(this).parent().siblings().filter(".username").text();
+        var user_first_name = $(this).parent().siblings().filter(".user_first_name").text();
+        var user_last_name = $(this).parent().siblings().filter(".user_last_name").text();
+        var user_role = $(this).parent().siblings().filter(".user_role").text();
+
+        $("#update-user-admin-user-name-id").val(user_name);
+        $("#update-user-admin-first-name-id").val(user_first_name);
+        $("#update-user-admin-last-name-id").val(user_last_name);
+        $("#update-user-admin-role-id").val(user_role);
+
+        $("#update-user-admin-user-name-id").disable();
+
+        $("#update-user-admin-form-id").show();
+    });
+
     getNewNews(getCurrentTime());
 });

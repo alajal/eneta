@@ -99,15 +99,25 @@ function addEvents($author, $title, $content,$addingTime)
     $conn = NULL;
 }
 
-function updateUser($email, $first_name, $last_name)
+function updateUser($email, $first_name, $last_name, $role)
 {
     $conn = connectToDatabase();
-    //$email = $conn->quote($email);
-    $sql = "UPDATE users SET firstname=?, lastname=? WHERE mail=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindValue(1, $first_name);
-    $stmt->bindValue(2, $last_name);
-    $stmt->bindValue(3, $email);
+
+    if (is_null($role)) {
+        $sql = "UPDATE users SET firstname=?, lastname=? WHERE mail=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1, $first_name);
+        $stmt->bindValue(2, $last_name);
+        $stmt->bindValue(3, $email);
+    } else {
+        $sql = "UPDATE users SET firstname=?, lastname=?, role=? WHERE mail=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1, $first_name);
+        $stmt->bindValue(2, $last_name);
+        $stmt->bindValue(3, $role);
+        $stmt->bindValue(4, $email);
+    }
+
     $stmt->execute();
     $conn = NULL;
 }
