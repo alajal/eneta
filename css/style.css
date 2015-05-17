@@ -16,6 +16,10 @@ body {
     background-color: ghostwhite;
 }
 
+table {
+    width: 100%;
+}
+
 .bottom {
     width: 100%;
     display: table;
