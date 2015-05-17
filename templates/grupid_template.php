@@ -25,6 +25,9 @@ include('header_template.php')
             <li><a class="grupid-select" href='grupid.php?mct'>MCT</a> </li>
             <li><a class="grupid-select" href='grupid.php?msp'>MSP</a> </li>
             <li><a class="grupid-select" href='grupid.php?mvp'>MVP</a> </li>
+            <li><a class="grupid-select" href='grupid.php?mug'>MUG.ee</a> </li>
+            <li><a class="grupid-select" href='grupid.php?system_center_user_group'>SCUG.ee</a> </li>
+            <li><a class="grupid-select" href='grupid.php?gow'>Geeks on Wheels</a> </li>
         </ul>
     </div>
 
