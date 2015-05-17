@@ -273,7 +273,7 @@ function getNewsHtml($messages) {
                 <p class='news-author'>Autor: {$message["firstname"]} {$message["lastname"]}</p>
                 <p class='news-content'>{$message["content"]}</p>
                 ";
-            if (isUserLoggedIn()) {
+            if (isAdmin()) {
                 $data .= "
                 <p class='news-mod-link'>
                     <a href='mysql-tasklist/news/deleteNewsFromDB.php?id={$message["id"]}'>Kustuta</a>
@@ -297,7 +297,7 @@ function getEventsToShow($usersAndEvents)
                 <h4 class='events-title'>{$event["title"]}</h4>
                 <p class='events-content'>{$event["content"]}</p>
             ";
-            if(isAdmin()){
+            if(isUserLoggedIn()){
                 $data .= "
                     <p class='events-mod-link'>
                         <a href='mysql-tasklist/events/deleteEventsFromDB.php?id={$event["id"]}'>Kustuta üritus</a>

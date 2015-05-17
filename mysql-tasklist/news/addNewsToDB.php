@@ -8,7 +8,7 @@ $news_title = $_POST['edit-news-title'];
 $news_content = $_POST['edit-news-content'];
 date_default_timezone_set("Europe/Tallinn");
 $news_date = date("Y-m-d H:i:s");
-if(isUserLoggedIn()){   //kontroll - ainult sisselogitud kasutaja saab uudiseid lisada
+if(isAdmin()){   //kontroll - ainult sisselogitud kasutaja saab uudiseid lisada
     addNews($news_user, $news_title, $news_content, $news_date);
 }
 

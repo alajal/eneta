@@ -6,7 +6,7 @@ echo "
 <form action='mysql-tasklist/news/addNewsToDB.php' method='post' id='edit-news-form-id'>
     <p>
         <label for='edit-news-user-id'>Autori email: </label>
-        <input type='text' name='edit-news-user' id='edit-news-user-id' readonly value='$user_name' >
+        <input type='text' name='edit-news-user' id='edit-news-user-id' readonly disabled size='50' value='$user_name' >
 
     </p>
 
