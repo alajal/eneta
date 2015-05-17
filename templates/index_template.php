@@ -23,10 +23,14 @@ include('header_template.php');
             <ul>
                 <li><a href="#uudised" id="show-news">Kuva uudised</a></li>
                 <li><a href="#statistika" id="show-news-statistics">Uudiste statistika</a> </li>
-                <?php if($loggedin) { ?>
-                        <li><a href="#sisestauudis" id="show-news-input" >Sisesta uudised</a> </li>
-                        <li><a href="#profiil" id="show-profile" >Profiil</a></li>
-                <?php } ?>
+                <?php
+                    if (isAdmin()) {
+                        echo "<li><a href='#sisestauudis' id='show-news-input' >Sisesta uudised</a> </li>";
+                    }
+                    if($loggedin) {
+                        echo "<li><a href='#profiil' id='show-profile' >Profiil</a></li>";
+                    }
+                ?>
             </ul>
         </div>
     <div id="content-col-seenews" class="content-col">

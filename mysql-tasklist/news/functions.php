@@ -57,14 +57,15 @@ function getEvents()
     return $result;
 }
 
-function addUser($email, $first_name, $last_name)
+function addUser($email, $first_name, $last_name, $role)
 {
     $conn = connectToDatabase();
-    $sql = "INSERT INTO users (mail, firstname, lastname) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (mail, firstname, lastname, role) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $email);
     $stmt->bindValue(2, $first_name);
     $stmt->bindValue(3, $last_name);
+    $stmt->bindValue(3, $role);
     $stmt->execute();
     $conn = NULL;
 }
@@ -296,7 +297,7 @@ function getEventsToShow($usersAndEvents)
                 <h4 class='events-title'>{$event["title"]}</h4>
                 <p class='events-content'>{$event["content"]}</p>
             ";
-            if(isUserLoggedIn()){
+            if(isAdmin()){
                 $data .= "
                     <p class='events-mod-link'>
                         <a href='mysql-tasklist/events/deleteEventsFromDB.php?id={$event["id"]}'>Kustuta üritus</a>
@@ -427,6 +428,19 @@ function deleteBlogEntry($blogentry_id)
     $stmt->bindValue(1, $blogentry_id);
     $stmt->execute();
     $conn = NULL;
+}
+
+function isAdmin()
+{
+    if (isUserLoggedIn()) {
+        $user_name = getLoggedInUserEmail();
+        $user_info = getUsersByUsername($user_name);
+
+        if ($user_info["role"] == "admin") {
+            return true;
+        }
+    }
+    return false;
 }
 
 ?>
