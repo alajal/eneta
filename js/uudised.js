@@ -145,9 +145,10 @@ $(document).ready(function(){
         $("#update-user-admin-last-name-id").val(user_last_name);
         $("#update-user-admin-role-id").val(user_role);
 
-        $("#update-user-admin-user-name-id").disable();
+        $("#update-user-admin-user-name-id").attr("disabled", "disabled");
+        $("#update-user-admin-user-name-id").attr("readonly", "readonly");
 
-        $("#update-user-admin-form-id").show();
+        $("#update-user-admin-form-id").removeClass("not");
     });
 
     getNewNews(getCurrentTime());

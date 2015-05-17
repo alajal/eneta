@@ -21,8 +21,14 @@ if (isAdmin()) {
                 <td class='username'>{$user["mail"]}</td>
                 <td class='user_first_name'>{$user["firstname"]}</td>
                 <td class='user_last_name'>{$user["lastname"]}</td>
-                <td class='user_role'>{$user["role"]}</td>
-                <td><button type='button' class='update_user_btn'>Muuda</button></td>
+                <td class='user_role'>{$user["role"]}</td>";
+                if ($user["mail"] == getLoggedInUserEmail()) {
+                    echo "<td><button type='button' class='update_user_btn' disabled>Muuda</button></td>";
+                } else {
+                    echo "<td><button type='button' class='update_user_btn'>Muuda</button></td>";
+                }
+
+            echo "
             </tr>
             ";
         }
