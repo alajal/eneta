@@ -33,7 +33,8 @@ include('header_template.php')
 
     <div id="content-col-grupid" class="content-col">
         <h3>Eneta</h3>
-        <p>Eneta.ee kommuuniportaal on info- ja suhtluskeskkond Microsofti tehnoloogiakasutajatele Eestis. Eneta eesmärk on koondada tehnoloogialane info, inimesed ja ettevõtted kokku ning pakkuda mugavat platvormi suhtlemiseks ja teadmiste jagamiseks.</p>
+        <p>Eneta.ee kommuuniportaal on info- ja suhtluskeskkond Microsofti tehnoloogiakasutajatele Eestis. </p>
+        <p>Eneta eesmärk on koondada tehnoloogialane info, inimesed ja ettevõtted kokku ning pakkuda mugavat platvormi suhtlemiseks ja teadmiste jagamiseks.</p>
     </div>
 </div>
 

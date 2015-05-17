@@ -113,6 +113,10 @@ $(document).ready(function(){
         }
     });
 
+    if (total_nbr_of_pages == 1) {
+        $("#load_more_news_button").hide();
+    }
+
     $("#load_more_news_button").click(function() {
         $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
             $("#content-col-seenews").append(data);
