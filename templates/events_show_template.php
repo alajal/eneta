@@ -2,6 +2,5 @@
 if(count($usersAndEvents) > 0) {
     echo getEventsToShow($usersAndEvents);
 } else {
-    echo "<p>jama 1</p>";
+    echo "<p>Sündmusi pole!</p>";
 }
-?>
