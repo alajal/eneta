@@ -32,7 +32,7 @@ include "mysql-tasklist/news/functions.php";
 // kui kasutajat pole baasis, lisame
 if (!is_null($googleuserid)) {
     if (!loggedInUserInDB($email)) {
-        addUser($email, $google_first_name, $google_family_name);
+        addUser($email, $google_first_name, $google_family_name, "regular");
     }
 }
 

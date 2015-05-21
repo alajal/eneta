@@ -57,14 +57,15 @@ function getEvents()
     return $result;
 }
 
-function addUser($email, $first_name, $last_name)
+function addUser($email, $first_name, $last_name, $role)
 {
     $conn = connectToDatabase();
-    $sql = "INSERT INTO users (mail, firstname, lastname) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (mail, firstname, lastname, role) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $email);
     $stmt->bindValue(2, $first_name);
     $stmt->bindValue(3, $last_name);
+    $stmt->bindValue(3, $role);
     $stmt->execute();
     $conn = NULL;
 }
@@ -98,15 +99,25 @@ function addEvents($author, $title, $content,$addingTime)
     $conn = NULL;
 }
 
-function updateUser($email, $first_name, $last_name)
+function updateUser($email, $first_name, $last_name, $role)
 {
     $conn = connectToDatabase();
-    //$email = $conn->quote($email);
-    $sql = "UPDATE users SET firstname=?, lastname=? WHERE mail=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindValue(1, $first_name);
-    $stmt->bindValue(2, $last_name);
-    $stmt->bindValue(3, $email);
+
+    if (is_null($role)) {
+        $sql = "UPDATE users SET firstname=?, lastname=? WHERE mail=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1, $first_name);
+        $stmt->bindValue(2, $last_name);
+        $stmt->bindValue(3, $email);
+    } else {
+        $sql = "UPDATE users SET firstname=?, lastname=?, role=? WHERE mail=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1, $first_name);
+        $stmt->bindValue(2, $last_name);
+        $stmt->bindValue(3, $role);
+        $stmt->bindValue(4, $email);
+    }
+
     $stmt->execute();
     $conn = NULL;
 }
@@ -272,7 +283,7 @@ function getNewsHtml($messages) {
                 <p class='news-author'>Autor: {$message["firstname"]} {$message["lastname"]}</p>
                 <p class='news-content'>{$message["content"]}</p>
                 ";
-            if (isUserLoggedIn()) {
+            if (isAdmin()) {
                 $data .= "
                 <p class='news-mod-link'>
                     <a href='mysql-tasklist/news/deleteNewsFromDB.php?id={$message["id"]}'>Kustuta</a>
@@ -427,6 +438,19 @@ function deleteBlogEntry($blogentry_id)
     $stmt->bindValue(1, $blogentry_id);
     $stmt->execute();
     $conn = NULL;
+}
+
+function isAdmin()
+{
+    if (isUserLoggedIn()) {
+        $user_name = getLoggedInUserEmail();
+        $user_info = getUsersByUsername($user_name);
+
+        if ($user_info["role"] == "admin") {
+            return true;
+        }
+    }
+    return false;
 }
 
 ?>

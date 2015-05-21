@@ -25,12 +25,16 @@ include('header_template.php')
             <li><a class="grupid-select" href='grupid.php?mct'>MCT</a> </li>
             <li><a class="grupid-select" href='grupid.php?msp'>MSP</a> </li>
             <li><a class="grupid-select" href='grupid.php?mvp'>MVP</a> </li>
+            <li><a class="grupid-select" href='grupid.php?mug'>MUG.ee</a> </li>
+            <li><a class="grupid-select" href='grupid.php?system_center_user_group'>SCUG.ee</a> </li>
+            <li><a class="grupid-select" href='grupid.php?gow'>Geeks on Wheels</a> </li>
         </ul>
     </div>
 
     <div id="content-col-grupid" class="content-col">
         <h3>Eneta</h3>
-        <p>Eneta.ee kommuuniportaal on info- ja suhtluskeskkond Microsofti tehnoloogiakasutajatele Eestis. Eneta eesmärk on koondada tehnoloogialane info, inimesed ja ettevõtted kokku ning pakkuda mugavat platvormi suhtlemiseks ja teadmiste jagamiseks.</p>
+        <p>Eneta.ee kommuuniportaal on info- ja suhtluskeskkond Microsofti tehnoloogiakasutajatele Eestis. </p>
+        <p>Eneta eesmärk on koondada tehnoloogialane info, inimesed ja ettevõtted kokku ning pakkuda mugavat platvormi suhtlemiseks ja teadmiste jagamiseks.</p>
     </div>
 </div>
 

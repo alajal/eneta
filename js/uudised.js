@@ -113,6 +113,10 @@ $(document).ready(function(){
         }
     });
 
+    if (total_nbr_of_pages == 1) {
+        $("#load_more_news_button").hide();
+    }
+
     $("#load_more_news_button").click(function() {
         $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
             $("#content-col-seenews").append(data);
@@ -128,6 +132,23 @@ $(document).ready(function(){
 
     $("#profile-edit-name-enable").click(function() {
        $("#update-user-form-id").toggleClass("not");
+    });
+
+    $(".update_user_btn").click(function(){
+        var user_name = $(this).parent().siblings().filter(".username").text();
+        var user_first_name = $(this).parent().siblings().filter(".user_first_name").text();
+        var user_last_name = $(this).parent().siblings().filter(".user_last_name").text();
+        var user_role = $(this).parent().siblings().filter(".user_role").text();
+
+        $("#update-user-admin-user-name-id").val(user_name);
+        $("#update-user-admin-first-name-id").val(user_first_name);
+        $("#update-user-admin-last-name-id").val(user_last_name);
+        $("#update-user-admin-role-id").val(user_role);
+
+        //$("#update-user-admin-user-name-id").attr("disabled", "disabled");
+        $("#update-user-admin-user-name-id").attr("readonly", "readonly");
+
+        $("#update-user-admin-form-id").removeClass("not");
     });
 
     getNewNews(getCurrentTime());
