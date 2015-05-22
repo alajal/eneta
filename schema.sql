@@ -101,6 +101,32 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+
+DROP TABLE IF EXISTS `blog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blog`
+  (
+      `idblog` int(11) NOT NULL AUTO_INCREMENT,
+      `username` VARCHAR(45) NOT NULL,
+      `blogname` VARCHAR(45) NOT NULL,
+      PRIMARY KEY (`idblog`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+DROP TABLE IF EXISTS `blogentry`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blogentry`
+  (
+      `idblogentry` int(11) NOT NULL AUTO_INCREMENT,
+      `blogname` VARCHAR(45) NOT NULL,
+      `blogdate` DATETIME NOT NULL,
+      `blogcontent` mediumtext,
+      PRIMARY KEY (`idblogentry`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*!40101 SET character_set_client = @saved_cs_client */;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
