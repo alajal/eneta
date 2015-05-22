@@ -32,6 +32,7 @@ include('header_template.php')
             <li><a id="show-events" href="#yritused">Vaata üritusi</a></li>
             <?php if($loggedin) { ?>
                 <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
+                <li><a id="register-events-input" href="#registreeriyritusele">Registreeri üritusele</a></li>
             <?php } ?>
         </ul>
     </div>
@@ -47,6 +48,13 @@ include('header_template.php')
         <!--Yrituste sisestamine -->
         <?php
             include('events_edit_template.php');
+        ?>
+    </div>
+
+    <div id="registreeri-yritusele" class="not content-col">
+        <!--Yritustele registreerimine -->
+        <?php
+            include('events_register_template.php');
         ?>
     </div>
 

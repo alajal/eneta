@@ -19,6 +19,11 @@ function hashChangeHandler() {
                 }
             });
             break;
+
+        case "#registreeriyritusele":
+            $(".content-col").addClass("not");
+            $("#registreeri-yritusele").removeClass("not");
+            break;
     }
 
     if (window.location.hash.substr(0, 5) == "#edit") {

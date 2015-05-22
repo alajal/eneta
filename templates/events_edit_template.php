@@ -5,20 +5,18 @@ if(isUserLoggedIn()) {
     //kontrollida, kas sellise mailiga kasutaja on olemas, kui jah, edasi lubada, kui ei, siis oelda, et pole oigusi.
     if(loggedInUserInDB(getLoggedInUserEmail())){
 
-            echo "
+        echo "
         <form action='mysql-tasklist/events/addEventsToDB.php' method='post' id='edit-events-form-id'>
             <p>
                 <label for='edit-events-author-id'>Ürituse sisestaja: </label>
                 <select name='edit-events-author' id='edit-events-author-id'>";
-
-            $users = getUsers();
-            //nyyd kuvatakse sisestaja email ainult, muid valikuid pole
-            if(count($users) > 0) {
-                $u = getLoggedInUserEmail();
-                echo "<option value='".$u."'>".$u."</option>";
-            } else {
-                echo "<p>Jama kasutajate saamisel.</p>";
-            }
+                $users = getUsers();
+                if(count($users) > 0) {
+                    $u = getLoggedInUserEmail();
+                    echo "<option value='".$u."'>".$u."</option>";
+                } else {
+                    echo "<p>Jama kasutajate saamisel.</p>";
+                }
             echo "
                 </select>
             </p>
@@ -37,7 +35,7 @@ if(isUserLoggedIn()) {
 
             <br>
 
-            <input type='submit' name='edit-submit-events''>
+            <input type='submit' name='edit-submit-events'>
 
         </form>";
     } else {

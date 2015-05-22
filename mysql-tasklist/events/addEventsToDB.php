@@ -1,7 +1,6 @@
 <?php
 
 include (__DIR__."/../news/functions.php");
-include_once ("../../session.php");
 
 $events_author = $_POST['edit-events-author'];
 $events_title = $_POST['edit-events-title'];

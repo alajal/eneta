@@ -305,6 +305,7 @@ function getEventsToShow($usersAndEvents)
         $data .= "
             <div class='events-story' id='events_{$event["id"]}'>
                 <h4 class='events-title'>{$event["title"]}</h4>
+
                 <p class='events-content'>{$event["content"]}</p>
             ";
             if(isUserLoggedIn()){
@@ -451,6 +452,16 @@ function isAdmin()
         }
     }
     return false;
+}
+
+function registrationToEvent($participant, $eventName){
+    $conn = connectToDatabase();
+    $sql = "INSERT INTO eventRegistration (participant, event) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(1, $participant);
+    $stmt->bindValue(2, $eventName);
+    $stmt->execute();
+    $conn = NULL;
 }
 
 ?>

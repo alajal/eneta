@@ -1,5 +1,4 @@
 <?php
-//include_once ("../mysql-tasklist/news/functions.php");
 if(isUserLoggedIn()) {
     echo "
 <form action='mysql-tasklist/blog/addBlogToDB.php' method='post' id='add-blog-form-id'>
