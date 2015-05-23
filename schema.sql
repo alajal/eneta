@@ -16,6 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `blog`
+--
+
+DROP TABLE IF EXISTS `blog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blog` (
+  `idblog` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `blogname` varchar(45) NOT NULL,
+  PRIMARY KEY (`idblog`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `blogentry`
+--
+
+DROP TABLE IF EXISTS `blogentry`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blogentry` (
+  `idblogentry` int(11) NOT NULL AUTO_INCREMENT,
+  `blogname` varchar(45) NOT NULL,
+  `blogdate` datetime NOT NULL,
+  `blogcontent` mediumtext,
+  PRIMARY KEY (`idblogentry`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `eventRegistration`
 --
 
@@ -26,8 +57,10 @@ CREATE TABLE `eventRegistration` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `participant` varchar(45) NOT NULL,
   `event` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `participant` (`participant`),
+  CONSTRAINT `eventRegistration_ibfk_1` FOREIGN KEY (`participant`) REFERENCES `users` (`mail`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,37 +128,12 @@ CREATE TABLE `users` (
   `mail` varchar(45) NOT NULL,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
+  `role` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mail` (`mail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-
-DROP TABLE IF EXISTS `blog`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `blog`
-  (
-      `idblog` int(11) NOT NULL AUTO_INCREMENT,
-      `username` VARCHAR(45) NOT NULL,
-      `blogname` VARCHAR(45) NOT NULL,
-      PRIMARY KEY (`idblog`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
-DROP TABLE IF EXISTS `blogentry`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `blogentry`
-  (
-      `idblogentry` int(11) NOT NULL AUTO_INCREMENT,
-      `blogname` VARCHAR(45) NOT NULL,
-      `blogdate` DATETIME NOT NULL,
-      `blogcontent` mediumtext,
-      PRIMARY KEY (`idblogentry`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -135,4 +143,4 @@ CREATE TABLE `blogentry`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-22 19:45:05
+-- Dump completed on 2015-05-23 14:45:48

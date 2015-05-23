@@ -234,7 +234,8 @@ function getUsersByUsername($user)
 function getNbrOfNewsByUsers()
 {
     $conn = connectToDatabase();
-    $sql = "select users.mail, users.firstname, users.lastname, count(news.title) as arv from news inner join users on news.user = users.mail GROUP BY users.mail";
+    $sql = "select users.mail, users.firstname, users.lastname, count(news.title) as arv
+            from news inner join users on news.user = users.mail GROUP BY users.mail";
     $stmt = $conn->query($sql);
     $result = $stmt->fetchAll();
     $conn = NULL;
@@ -462,6 +463,16 @@ function registrationToEvent($participant, $eventName){
     $stmt->bindValue(2, $eventName);
     $stmt->execute();
     $conn = NULL;
+}
+
+function userRegisteredEvent($participant){
+    $conn = connectToDatabase();
+    $sql = "SELECT event FROM eventRegistration WHERE participant = '$participant' ";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetchAll();
+    $conn = NULL;
+    return $result;
+
 }
 
 ?>
