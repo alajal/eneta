@@ -1,18 +1,18 @@
 <?php
-include '../mysql-tasklist/news/functions.php';
+//kui midagion katki, siis dekommenteerid yrituse.js failis ning includei siin functions.php
 
-if(isUserLoggedIn()) {
-    //kontrollida, kas sellise mailiga kasutaja on olemas, kui jah, edasi lubada, kui ei, siis oelda, et pole oigusi.
-    if(loggedInUserInDB(getLoggedInUserEmail())){
+//include '../mysql-tasklist/news/functions.php';
+if($loggedin) {
+    if($userInDB){
 
         echo "
         <form action='mysql-tasklist/events/addEventsToDB.php' method='post' id='edit-events-form-id'>
             <p>
                 <label for='edit-events-author-id'>Ürituse sisestaja: </label>
                 <select name='edit-events-author' id='edit-events-author-id'>";
-                $users = getUsers();
+
                 if(count($users) > 0) {
-                    $u = getLoggedInUserEmail();
+                    $u = $loggedInUserEmail;
                     echo "<option value='".$u."'>".$u."</option>";
                 } else {
                     echo "<p>Jama kasutajate saamisel.</p>";

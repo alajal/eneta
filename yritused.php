@@ -1,6 +1,5 @@
 <?php
 
-include('session.php');
 date_default_timezone_set("Europe/Tallinn");
 
 require_once 'mysql-tasklist/news/functions.php';
@@ -17,8 +16,10 @@ $loggedInUserEmail = 0;
 if($loggedin){
     $loggedInUserEmail = getLoggedInUserEmail();
 }
-
+$allEvents = getEvents();
+$userRegisteredEvents = userRegisteredEvent($loggedInUserEmail);
 $userInDB = loggedInUserInDB($loggedInUserEmail);
+
 
 include('templates/yritused_template.php');
 

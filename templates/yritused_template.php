@@ -32,7 +32,7 @@ include('header_template.php')
             <li><a id="show-events" href="#yritused">Vaata üritusi</a></li>
             <?php if($loggedin) { ?>
                 <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
-                <li><a id="register-events-input" href="#registreeriyritusele">Registreeri üritusele</a></li>
+                <li><a id="register-events-input" href="#registreeriyritusele">Registreerimine</a></li>
             <?php } ?>
         </ul>
     </div>

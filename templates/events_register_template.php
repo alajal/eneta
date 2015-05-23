@@ -1,27 +1,33 @@
 <?php
 
-if(isUserLoggedIn()){
-    $events = getEvents();
-    if(count($events) > 0) {
-    echo "
-        <form action='mysql-tasklist/events/addEventRegistrationToDB.php' method='post' id='register-event-form-id'>
-            <p>
-                <label for='event-entry-name-id'>Vali üritus: </label>
+if($loggedin){
+    if(count($allEvents) > 0) {
+        echo "
+            <label for='my-events-id'>Minu registreeritud üritused: </label>";
 
-                <select name='event-entry-name'>";
+            foreach($userRegisteredEvents as $row){
+                echo "<p id='userRegEvent'> {$row["event"]}</p>";
+            }
 
-                foreach($events as $event) {
-                    echo "<option value='{$event["title"]}'>{$event["title"]}</option>";
-                }
-                echo "
-                </select>
-            </p>
+        echo "
+            <form action='mysql-tasklist/events/addEventRegistrationToDB.php' method='post' id='register-event-form-id'>
+                <p>
+                    <label for='event-entry-name-id'>Registreeru uuele üritusele: </label>
 
-            <br>
-            <input type='submit' name='register-submit-events'>
+                    <select name='event-entry-name'>";
 
-        </form>
-    ";
+                    foreach($allEvents as $event) {
+                        echo "<option value='{$event["title"]}'>{$event["title"]}</option>";
+                    }
+                    echo "
+                    </select>
+                </p>
+
+                <br>
+                <input type='submit' name='register-submit-events'>
+
+            </form>
+        ";
     }
 
 }

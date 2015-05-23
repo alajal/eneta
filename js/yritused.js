@@ -10,14 +10,14 @@ function hashChangeHandler() {
             $(".content-col").addClass("not");
             $("#sisesta-yritusi").removeClass("not");
 
-            $.get("/templates/events_edit_template.php", function (data) {
+/*            $.get("/templates/events_edit_template.php", function (data) {
                 $("#sisesta-yritusi").html(data);
                 if ($("#edit-events-form-id").length > 0) {
                     var input_events_form_target = "mysql-tasklist/events/addEventsToDB.php";
                     $("#edit-events-form-id").attr("action", input_events_form_target);
                     $("#edit-events-form-id")[0].reset();
                 }
-            });
+            });*/
             break;
 
         case "#registreeriyritusele":
