@@ -5,9 +5,10 @@ function hashChangeHandler() {
     //saadame ajaxi oige blogi kohta ning asendame content-coli sisu
     var url = window.location.hash.substring(1);
 
-    $.get("/content.php", {cid: url}, function(data) {
+    $.get("/content.php", {cid: url}, function (data) {
         $("#content-col-grupid").html(data);
     });
+
 }
 
 
