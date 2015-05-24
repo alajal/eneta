@@ -22,12 +22,12 @@ include('header_template.php')
 <div id="content">
     <div id="left-sidebar">
         <ul>
-            <li><a class="grupid-select" href='grupid.php?mct'>MCT</a> </li>
-            <li><a class="grupid-select" href='grupid.php?msp'>MSP</a> </li>
-            <li><a class="grupid-select" href='grupid.php?mvp'>MVP</a> </li>
-            <li><a class="grupid-select" href='grupid.php?mug'>MUG.ee</a> </li>
-            <li><a class="grupid-select" href='grupid.php?system_center_user_group'>SCUG.ee</a> </li>
-            <li><a class="grupid-select" href='grupid.php?gow'>Geeks on Wheels</a> </li>
+            <li><a class="grupid-select" href='#mct'>MCT</a> </li>
+            <li><a class="grupid-select" href='#msp'>MSP</a> </li>
+            <li><a class="grupid-select" href='#mvp'>MVP</a> </li>
+            <li><a class="grupid-select" href='#mug'>MUG.ee</a> </li>
+            <li><a class="grupid-select" href='#system_center_user_group'>SCUG.ee</a> </li>
+            <li><a class="grupid-select" href='#gow'>Geeks on Wheels</a> </li>
         </ul>
     </div>
 
