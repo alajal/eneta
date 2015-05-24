@@ -215,6 +215,7 @@ nav.top {
         border-bottom: 1px solid #ccc;
     }
 
+
 }
 
 @media only screen and (max-device-width: 600px) {
@@ -232,6 +233,20 @@ nav.top {
 
     .content-col p, ul {
         font-size: 2em;
+    }
+    
+    #signoutButton, #signinButton {
+        font-size: 2.5em;
+    }
+
+    #signoutButton, #signinButton {
+        font-size: 2.5em;
+    }
+
+    .inoutbutton {
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
 
 }
