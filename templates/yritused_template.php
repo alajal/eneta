@@ -16,7 +16,9 @@
     <script src="js/main.js"></script>
     <script src="js/yritused.js"></script>
 
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!--script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+    <script src="js/jquery.datetimepicker.js"></script>
 
 </head>
 <body>
@@ -34,6 +36,7 @@ include('header_template.php')
                 <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
                 <li><a id="register-events-input" href="#registreeriyritusele">Registreerimine</a></li>
             <?php } ?>
+            <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
         </ul>
     </div>
 

@@ -1,7 +1,7 @@
 <?php
 //kui midagion katki, siis dekommenteerid yrituse.js failis ning includei siin functions.php
 
-include '../mysql-tasklist/news/functions.php';
+include_once (__DIR__."/../mysql-tasklist/news/functions.php");
 if(isUserLoggedIn()) {
     $loggedInUserEmail = getLoggedInUserEmail();
     $users = getUsers();
@@ -28,6 +28,12 @@ if(isUserLoggedIn()) {
                 <label for='edit-events-title-id'>Ürituse nimi</label>
                 <br>
                 <textarea name='edit-events-title' id='edit-events-title-id' maxlength='255' rows='1' cols='50'></textarea>
+            </p>
+
+            <p>
+                <label for='edit-events-eventTime-id'>Ürituse aeg</label>
+                <br>
+                <input type='text' name='edit-events-eventTime' id='edit-events-eventTime-id' size='50' />
             </p>
 
             <p>

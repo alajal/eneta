@@ -18,6 +18,7 @@ function hashChangeHandler() {
                     $("#edit-events-form-id")[0].reset();
                 }
             });*/
+            $("#edit-events-form-id")[0].reset();
             break;
 
         case "#registreeriyritusele":
@@ -40,14 +41,30 @@ function hashChangeHandler() {
                 var title = $("#events_" + events_id + " .events-title").first().text();
                 var content = $("#events_" + events_id + " .events-content").first().text();
                 //var location = $("events_" + events_id + " .events-location").first().text();
-                //var eventTime = $("events_" + eventTime + " .events-eventTime").first().text();
+                var eventTime = $("#events_" + events_id + " .events-eventTime").first().text();
                 // kysime pealkirja ja sisu v22rtused ning t2idame need
                 $("#edit-events-title-id").val(title);
                 $("#edit-events-content-id").val(content);
                 //$("#edit-events-location-id").val(location);
-                //$("#edit-events-eventTime-id").val(eventTime);
+                $("#edit-events-eventTime-id").val(eventTime);
+
+                var arr = eventTime.split("-");
+                var year = arr[0];
+                var month = arr[1];
+                arr = arr[2].split(" ");
+                var day = arr[0];
+
+                $('#edit-events-eventTime-id').datetimepicker({
+                    format:'Y-m-d H:i',
+                    dayOfWeekStart : 1,
+                    lang:"et",
+                    startDate: (year + "/" + month + "/" + day)
+                });
             }
         });
+
+
+
     }
 }
 
@@ -60,5 +77,15 @@ $(document).ready(function(){
 
     //var obj = $("#blaaaaaaaaaaaaaa");
     //obj.datepicker();
+    var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    $('#edit-events-eventTime-id').datetimepicker({
+        format:'Y-m-d H:i',
+        dayOfWeekStart : 1,
+        lang:"et",
+        startDate:	(year + "/" + month + "/" + day)
+    });
 });
 

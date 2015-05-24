@@ -83,17 +83,17 @@ function addNews($user, $title, $content, $date)
     $conn = NULL;
 }
 
-function addEvents($author, $title, $content,$addingTime)
+function addEvents($author, $title, $content,$addingTime, $eventTime)
 {
     $conn = connectToDatabase();
-    $sql = "INSERT INTO events (author, title, content, addingTime) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO events (author, title, content, addingTime, eventTime) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $author);
     $stmt->bindValue(2, $title);
     $stmt->bindValue(3, $content);
     //$stmt->bindValue(4, $location);
     $stmt->bindValue(4, $addingTime);
-    //$stmt->bindValue(6, $eventTime);
+    $stmt->bindValue(5, $eventTime);
     $stmt->execute();
     echo "addevents funktisoonis olen";
     $conn = NULL;
@@ -136,18 +136,18 @@ function updateNews($id, $user, $title, $content, $date)
     $conn = NULL;
 }
 
-function updateEvents($id, $author, $title, $content, $addingTime)
+function updateEvents($id, $author, $title, $content, $addingTime, $eventTime)
 {
     $conn = connectToDatabase();
-    $sql = "UPDATE events SET events.author=?, title=?, content=?, addingTime=? WHERE id=?";
+    $sql = "UPDATE events SET events.author=?, title=?, content=?, addingTime=?, eventTime=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $author);
     $stmt->bindValue(2, $title);
     $stmt->bindValue(3, $content);
     //$stmt->bindValue(4, $location);
     $stmt->bindValue(4, $addingTime);
-   // $stmt->bindValue(6, $eventTime);
-    $stmt->bindValue(5, $id);
+    $stmt->bindValue(5, $eventTime);
+    $stmt->bindValue(6, $id);
     $stmt->execute();
     $conn = NULL;
 
@@ -188,7 +188,7 @@ function getUsersAndNews($start_row, $nbr_of_rows)
 function getUsersAndEvents($start_row, $nbr_of_rows)
 {
     $_conn = connectToDatabase();
-    $sql = "select users.mail, users.firstname, users.lastname, events.id, events.title, events.content, events.addingTime
+    $sql = "select users.mail, users.firstname, users.lastname, events.id, events.title, events.content, events.addingTime, events.eventTime
             from events inner join users on events.author=users.mail
             order by events.addingTime DESC";
     $stmt = $_conn->query($sql);
@@ -303,10 +303,11 @@ function getEventsToShow($usersAndEvents)
 {
     $data = '';
     foreach($usersAndEvents as $event) {
+        $dateform = date("Y-m-d H:i" ,strtotime($event["eventTime"]));
         $data .= "
             <div class='events-story' id='events_{$event["id"]}'>
                 <h4 class='events-title'>{$event["title"]}</h4>
-
+                <p class='events-eventTime'>$dateform</p>
                 <p class='events-content'>{$event["content"]}</p>
             ";
             if(isUserLoggedIn()){
