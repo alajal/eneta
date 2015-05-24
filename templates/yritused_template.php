@@ -36,7 +36,6 @@ include('header_template.php')
                 <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
                 <li><a id="register-events-input" href="#registreeriyritusele">Registreerimine</a></li>
             <?php } ?>
-            <li><a id="show-events-input" href="#sisestayritus">Sisesta üritusi</a></li>
         </ul>
     </div>
 
