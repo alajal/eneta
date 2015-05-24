@@ -6,7 +6,7 @@
 
 function getNewNews(last_news_time) {
     var query_string = {'timestamp' : last_news_time};
-    $.post( "mysql-tasklist/news/reverseAjaxNews.php", query_string, function (data) {
+    $.get( "mysql-tasklist/news/reverseAjaxNews.php", query_string, function (data) {
             var obj = $.parseJSON(data);
             $("#content-col-seenews").prepend(obj.sisu);
             getNewNews(obj.timestamp);
@@ -99,7 +99,7 @@ $(document).ready(function(){
     $(window).scroll(function() {
         if( $(window).scrollTop() > old_scroll ){ //if we are scrolling down
             if( ($(window).scrollTop() + $(window).height() >= $(document).height()  ) && (current_page < total_nbr_of_pages) ) {
-                $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
+                $.get("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
                     $("#content-col-seenews").append(data);
                     current_page++;
                     // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame
@@ -118,7 +118,7 @@ $(document).ready(function(){
     }
 
     $("#load_more_news_button").click(function() {
-        $.post("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
+        $.get("mysql-tasklist/news/getMoreNewsFromDB.php", {"current_page_nbr": current_page}, function (data) {
             $("#content-col-seenews").append(data);
             current_page++;
             // liigutame nupu content-col-1 l6ppu, kui uudiseid enam tulemas ei ole, peidame

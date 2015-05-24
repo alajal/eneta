@@ -5,9 +5,9 @@
 
 require(__DIR__."/functions.php");
 // browserilt tuli POST, kus timestamp seatud
-if( isset( $_POST['timestamp'] ) ) {
+if( isset( $_GET['timestamp'] ) ) {
 
-    $timestamp = $_POST['timestamp'];
+    $timestamp = $_GET['timestamp'];
     $news_ajax_timeout = 15;
     $news_ajax_sec_between_queries = 3;
     $news_ajax_cycle_counter = 0;
