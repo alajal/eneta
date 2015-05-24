@@ -1,9 +1,12 @@
 <?php
 //kui midagion katki, siis dekommenteerid yrituse.js failis ning includei siin functions.php
 
-//include '../mysql-tasklist/news/functions.php';
-if($loggedin) {
-    if($userInDB){
+include '../mysql-tasklist/news/functions.php';
+if(isUserLoggedIn()) {
+    $loggedInUserEmail = getLoggedInUserEmail();
+    $users = getUsers();
+
+    if(loggedInUserInDB($loggedInUserEmail)){
 
         echo "
         <form action='mysql-tasklist/events/addEventsToDB.php' method='post' id='edit-events-form-id'>
