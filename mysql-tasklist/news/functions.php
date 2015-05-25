@@ -74,12 +74,13 @@ function getEventsAvailableForRegister() {
 function addUser($email, $first_name, $last_name, $role)
 {
     $conn = connectToDatabase();
+    //$role = $conn->quote($role);
     $sql = "INSERT INTO users (mail, firstname, lastname, role) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $email);
     $stmt->bindValue(2, $first_name);
     $stmt->bindValue(3, $last_name);
-    $stmt->bindValue(3, $role);
+    $stmt->bindValue(4, $role);
     $stmt->execute();
     $conn = NULL;
 }
