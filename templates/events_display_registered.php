@@ -7,7 +7,7 @@ if(isUserLoggedIn()) {
     echo "<h3 class='blog-title'>$event</h3>";
     echo "<p>";
         foreach ($event_users as $event_user) {
-            echo "{$event_user['firstname']} {$event_user['lastname']}";
+            echo "{$event_user['firstname']} {$event_user['lastname']}<br>";
         }
     echo "</p>";
 } else {
