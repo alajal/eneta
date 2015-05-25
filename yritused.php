@@ -17,6 +17,7 @@ if($loggedin){
     $loggedInUserEmail = getLoggedInUserEmail();
 }
 $allEvents = getEvents();
+$allEventsAvailableForRegister = getEventsAvailableForRegister();
 $userRegisteredEvents = userRegisteredEvent($loggedInUserEmail);
 $userInDB = loggedInUserInDB($loggedInUserEmail);
 

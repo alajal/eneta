@@ -16,7 +16,7 @@ if($loggedin){
 
                     <select name='event-entry-name'>";
 
-                    foreach($allEvents as $event) {
+                    foreach($allEventsAvailableForRegister as $event) {
                         echo "<option value='{$event["title"]}'>{$event["title"]}</option>";
                     }
                     echo "

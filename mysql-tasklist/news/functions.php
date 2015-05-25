@@ -57,6 +57,20 @@ function getEvents()
     return $result;
 }
 
+function getEventsAvailableForRegister() {
+    date_default_timezone_set("Europe/Tallinn");
+    $current_time = date("Y-m-d H:i:s");
+
+    $conn = connectToDatabase();
+    $current_time = $conn->quote($current_time);
+    $sql = "SELECT * FROM events WHERE eventTime > $current_time
+            ORDER BY addingTime DESC";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetchAll();
+    $conn = NULL;
+    return $result;
+}
+
 function addUser($email, $first_name, $last_name, $role)
 {
     $conn = connectToDatabase();
