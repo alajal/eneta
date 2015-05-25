@@ -75,12 +75,12 @@ function hashChangeHandler() {
                 $("#edit-news-form-id").attr("action", edit_news_form_target);
 
                 var title = $("#news_" + news_id + " .news-title").first().text();
-                var content = $("#news_" + news_id + " .news-content").first().text();
+                var content = $("#news_" + news_id + " .news-content").first().html();
                 // kysime pealkirja ja sisu v22rtused ning t2idame need
                 //var title = $(this).parent().prevUntil(".news-title").last().prev().text();
                 //var content = $(this).parent().prev().text();
                 $("#edit-news-title-id").val(title);
-                $("#edit-news-content-id").val(content);
+                $("#edit-news-content-id").html(content);
             }
         });
     }
