@@ -60,6 +60,10 @@ include('header_template.php')
         ?>
     </div>
 
+    <div id="content-col-yritused-display-registered" class="not content-col">
+        <!--Yritustele registreerimine -->
+    </div>
+
 </div>
 
 <?php

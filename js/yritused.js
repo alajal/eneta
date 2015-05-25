@@ -62,9 +62,15 @@ function hashChangeHandler() {
                 });
             }
         });
+    }
 
-
-
+    if (window.location.hash.substr(0, 11) == "#registered") {
+        var events_title = window.location.hash.substr(12);
+        $(".content-col").addClass("not");
+        $("#content-col-yritused-display-registered").removeClass("not");
+        $.get("/templates/events_display_registered.php", {event: events_title}, function(data) {
+            $("#content-col-yritused-display-registered").html(data);
+        });
     }
 }
 

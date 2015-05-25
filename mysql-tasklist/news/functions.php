@@ -316,6 +316,8 @@ function getEventsToShow($usersAndEvents)
                         <a href='mysql-tasklist/events/deleteEventsFromDB.php?id={$event["id"]}'>Kustuta üritus</a>
                         <span> | </span>
                         <a href='#edit_{$event["id"]}' class='edit_events_button'>Muuda üritust</a>
+                        <span> | </span>
+                        <a href='#registered_{$event["title"]}' class='edit_events_button'>Näita registreerituid</a>
                      </p>";
             }
         $data .= "
@@ -474,6 +476,20 @@ function userRegisteredEvent($participant){
     $conn = NULL;
     return $result;
 
+}
+
+function getUsersByEvent($event)
+{
+    $conn = connectToDatabase();
+    $event = $conn->quote($event);
+    $sql = "select users.mail, users.firstname, users.lastname, eventregistration.event
+            from eventregistration inner join users on eventregistration.participant = users.mail
+            where eventregistration.event = $event
+            order by eventregistration.id;";
+    $stmt = $conn->query($sql);
+    $result = $stmt->fetchAll();
+    $conn = NULL;
+    return $result;
 }
 
 ?>
